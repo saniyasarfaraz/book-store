@@ -1,4 +1,4 @@
-const bookdescription = () => {
+function bookdescription(props) {
   return (
     <>
       <div
@@ -11,8 +11,12 @@ const bookdescription = () => {
         }}
       >
         <div class="row g-0 ">
-          <div className="col-md-6">
-            <img src="" className="img-fluid rounded-start" alt="a book"></img>
+          <div className="col-md-6 ">
+            <img
+              src={props.img}
+              className="img-fluid rounded-start book-img"
+              alt="a book"
+            ></img>
           </div>
           <div class="col-md-6">
             <div class="card-body">
@@ -33,6 +37,6 @@ const bookdescription = () => {
       </div>
     </>
   );
-};
+}
 
 export default bookdescription;

@@ -1,51 +1,126 @@
+import MokingBird from "./1983.png";
 const books = [
   {
     bookName: "To Kill a Mockingbird",
     author: "Harper Lee",
-    imageSource: "",
-    bookGenre: "",
-    price: "",
-    bookdescription: "",
+    imageSource: { MokingBird },
+    bookGenre: "Fiction",
+    price: "899",
+    pages: 336,
+    bookdescription:
+      "A novel about the serious issues of rape and racial inequality told through the eyes of young Scout Finch in the deep South of the 1930s. It explores themes of justice, morality, and the coexistence of good and evil.",
   },
   {
     bookName: "1984",
     author: "George Orwell",
     imageSource: "",
-    bookGenre: "",
-    price: "",
-    bookdescription: "",
+    bookGenre: "Dystopian",
+    price: "799",
+    pages: 328,
+    bookdescription:
+      "A dystopian novel set in a totalitarian society ruled by Big Brother. It delves into the dangers of totalitarianism, surveillance, and repressive regimentation of all persons and behaviors within society.",
   },
   {
-    bookName: "",
-    author: "",
+    bookName: "Pride and Prejudice",
+    author: "Jane Austen",
     imageSource: "",
-    bookGenre: "",
-    price: "",
-    bookdescription: "",
+    bookGenre: "Romance",
+    price: "699",
+    pages: 279,
+    bookdescription:
+      "A classic novel of manners that explores the issues of marriage, money, and love in the British Regency. It tells the story of the Bennet family and their five unmarried daughters, focusing on Elizabeth Bennet's turbulent relationship with the wealthy Mr. Darcy.",
   },
   {
-    bookName: "",
-    author: "",
+    bookName: "The Great Gatsby",
+    author: "F. Scott Fitzgerald",
     imageSource: "",
-    bookGenre: "",
-    price: "",
-    bookdescription: "",
+    bookGenre: "Fiction",
+    price: "799",
+    pages: 180,
+    bookdescription:
+      "A novel about the American dream and the excesses of the Jazz Age. It follows the mysterious and wealthy Jay Gatsby and his unrequited love for Daisy Buchanan, set against the backdrop of the Roaring Twenties.",
   },
   {
-    bookName: "",
-    author: "",
+    bookName: "The Catcher in the Rye",
+    author: "J.D. Salinger",
     imageSource: "",
-    bookGenre: "",
-    price: "",
-    bookdescription: "",
+    bookGenre: "Fiction",
+    price: "749",
+    pages: 234,
+    bookdescription:
+      "A story about teenage angst and alienation narrated by the iconic Holden Caulfield. It captures his journey through New York City as he deals with complex issues of identity, belonging, loss, and connection.",
   },
   {
-    bookName: "",
-    author: "",
+    bookName: "Harry Potter and the Philosopher's Stone",
+    author: "J.K. Rowling",
     imageSource: "",
-    bookGenre: "",
-    price: "",
-    bookdescription: "",
+    bookGenre: "Fantasy",
+    price: "999",
+    pages: 309,
+    bookdescription:
+      "The first book in the Harry Potter series, introducing readers to the young wizard and his adventures at Hogwarts School of Witchcraft and Wizardry. It sets the stage for the epic battle between good and evil in the wizarding world.",
+  },
+  {
+    bookName: "The Lord of the Rings",
+    author: "J.R.R. Tolkien",
+    imageSource: "",
+    bookGenre: "Fantasy",
+    price: "1999",
+    pages: 1216,
+    bookdescription:
+      "An epic fantasy novel about the struggle to destroy the One Ring and the fight against the dark lord Sauron. The story follows a diverse group of heroes, including hobbits, elves, dwarves, and men, on their quest to save Middle-earth.",
+  },
+  {
+    bookName: "The Hobbit",
+    author: "J.R.R. Tolkien",
+    imageSource: "",
+    bookGenre: "Fantasy",
+    price: "899",
+    pages: 310,
+    bookdescription:
+      "A prelude to The Lord of the Rings, this novel follows Bilbo Baggins on his unexpected journey with a group of dwarves to reclaim their homeland from the dragon Smaug. It is a tale of adventure, bravery, and friendship.",
+  },
+  {
+    bookName: "The Da Vinci Code",
+    author: "Dan Brown",
+    imageSource: "",
+    bookGenre: "Thriller",
+    price: "899",
+    pages: 489,
+    bookdescription:
+      "A thriller that follows Robert Langdon as he uncovers secrets hidden in Da Vinci's works. The novel combines art, history, and cryptography, leading to a gripping and controversial exploration of religion and secret societies.",
+  },
+  {
+    bookName: "The Alchemist",
+    author: "Paulo Coelho",
+    imageSource: "",
+    bookGenre: "Adventure",
+    price: "799",
+    pages: 208,
+    bookdescription:
+      "A philosophical novel about a shepherd's journey to find his personal legend and fulfill his dreams. It teaches valuable life lessons about listening to your heart, recognizing opportunities, and following your dreams.",
+  },
+  {
+    bookName: "The Kite Runner",
+    author: "Khaled Hosseini",
+    imageSource: "",
+    bookGenre: "Drama",
+    price: "849",
+    pages: 372,
+    bookdescription:
+      "A story of friendship and redemption set against the backdrop of a changing Afghanistan. It follows Amir and Hassan, two boys from different social backgrounds, and explores themes of guilt, forgiveness, and the long shadow of the past.",
+  },
+
+  {
+    bookName: "Dune",
+    author: "Frank Herbert",
+    imageSource: "",
+    bookGenre: "Science Fiction",
+    price: "1099",
+    pages: 688,
+    bookdescription:
+      "A science fiction epic set on the desert planet of Arrakis. It explores themes of politics, religion, and ecology through the story of Paul Atreides, who becomes embroiled in the complex power struggles over the planet's valuable spice melange.",
   },
 ];
+
 export default books;

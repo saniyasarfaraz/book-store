@@ -54,3 +54,7 @@ body{
 .book-card{
     background: #f5e1bc9e;
 }
+
+.book-img{
+    height:90vh;
+}
