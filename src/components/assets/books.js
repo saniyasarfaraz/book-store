@@ -1,0 +1,51 @@
+const books = [
+  {
+    bookName: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    imageSource: "",
+    bookGenre: "",
+    price: "",
+    bookdescription: "",
+  },
+  {
+    bookName: "1984",
+    author: "George Orwell",
+    imageSource: "",
+    bookGenre: "",
+    price: "",
+    bookdescription: "",
+  },
+  {
+    bookName: "",
+    author: "",
+    imageSource: "",
+    bookGenre: "",
+    price: "",
+    bookdescription: "",
+  },
+  {
+    bookName: "",
+    author: "",
+    imageSource: "",
+    bookGenre: "",
+    price: "",
+    bookdescription: "",
+  },
+  {
+    bookName: "",
+    author: "",
+    imageSource: "",
+    bookGenre: "",
+    price: "",
+    bookdescription: "",
+  },
+  {
+    bookName: "",
+    author: "",
+    imageSource: "",
+    bookGenre: "",
+    price: "",
+    bookdescription: "",
+  },
+];
+export default books;

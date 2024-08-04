@@ -1,5 +1,6 @@
 body{
     background-color:#c4a27c;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .home{
     background-color:#c4a27c;
@@ -48,4 +49,8 @@ body{
     font-size: 4rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bolder;
+}
+
+.book-card{
+    background: #f5e1bc9e;
 }

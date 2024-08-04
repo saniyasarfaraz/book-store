@@ -2,7 +2,7 @@ const bookdescription = () => {
   return (
     <>
       <div
-        class="card mb-3"
+        class="card mb-3 book-card"
         style={{
           maxWidth: "90vw",
           minHeight: "90vh",
@@ -10,7 +10,7 @@ const bookdescription = () => {
           marginTop: "5vh",
         }}
       >
-        <div class="row g-0">
+        <div class="row g-0 ">
           <div className="col-md-6">
             <img src="" className="img-fluid rounded-start" alt="a book"></img>
           </div>
