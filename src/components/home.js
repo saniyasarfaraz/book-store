@@ -17,13 +17,13 @@ const home = () => {
               <p className="card-text home-text">
                 Get Your Favourite Book At Your Doorstep.
               </p>
-              <a href={Bookdescription} class="btn btn-primary btn-lg">
+              <a href="" className="btn btn-primary btn-lg">
                 Show Books
               </a>
             </div>
           </div>
         </div>
-        <div class="p-2">
+        <div className="p-2">
           <img src={image} alt="background" style={{ maxWidth: "40vw" }}></img>
         </div>
       </div>

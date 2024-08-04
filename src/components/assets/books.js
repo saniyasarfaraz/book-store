@@ -1,9 +1,20 @@
-import MokingBird from "./1983.png";
+import MokingBird from "./images/Tokillamockingbird.jpg";
+import Nineteen from "./images/1983.png";
+import pride from "./images/prideandprejudice.jpg";
+import greatgetsby from "./images/thegreatgatsby.jpg";
+import catcher from "./images/thecatcherintherye.jpg";
+import harrypotter from "./images/Harrypotterandthephilosophersstone.jpg";
+import lordOfRings from "./images/thelordofrings.jpeg";
+import hobbit from "./images/thehobbit.jpg";
+import vinci from "./images/thedavincicode.jpg";
+import Alchemist from "./images/TheAlchemist.jpg";
+import kite from "./images/thekiterunner.webp";
+import Dune from "./images/Dune.jpg";
 const books = [
   {
     bookName: "To Kill a Mockingbird",
     author: "Harper Lee",
-    imageSource: { MokingBird },
+    imageSource: MokingBird,
     bookGenre: "Fiction",
     price: "899",
     pages: 336,
@@ -13,7 +24,7 @@ const books = [
   {
     bookName: "1984",
     author: "George Orwell",
-    imageSource: "",
+    imageSource: Nineteen,
     bookGenre: "Dystopian",
     price: "799",
     pages: 328,
@@ -23,7 +34,7 @@ const books = [
   {
     bookName: "Pride and Prejudice",
     author: "Jane Austen",
-    imageSource: "",
+    imageSource: pride,
     bookGenre: "Romance",
     price: "699",
     pages: 279,
@@ -33,7 +44,7 @@ const books = [
   {
     bookName: "The Great Gatsby",
     author: "F. Scott Fitzgerald",
-    imageSource: "",
+    imageSource: greatgetsby,
     bookGenre: "Fiction",
     price: "799",
     pages: 180,
@@ -43,7 +54,7 @@ const books = [
   {
     bookName: "The Catcher in the Rye",
     author: "J.D. Salinger",
-    imageSource: "",
+    imageSource: catcher,
     bookGenre: "Fiction",
     price: "749",
     pages: 234,
@@ -51,9 +62,9 @@ const books = [
       "A story about teenage angst and alienation narrated by the iconic Holden Caulfield. It captures his journey through New York City as he deals with complex issues of identity, belonging, loss, and connection.",
   },
   {
-    bookName: "Harry Potter and the Philosopher's Stone",
+    bookName: "Harry Potter",
     author: "J.K. Rowling",
-    imageSource: "",
+    imageSource: harrypotter,
     bookGenre: "Fantasy",
     price: "999",
     pages: 309,
@@ -63,7 +74,7 @@ const books = [
   {
     bookName: "The Lord of the Rings",
     author: "J.R.R. Tolkien",
-    imageSource: "",
+    imageSource: lordOfRings,
     bookGenre: "Fantasy",
     price: "1999",
     pages: 1216,
@@ -73,7 +84,7 @@ const books = [
   {
     bookName: "The Hobbit",
     author: "J.R.R. Tolkien",
-    imageSource: "",
+    imageSource: hobbit,
     bookGenre: "Fantasy",
     price: "899",
     pages: 310,
@@ -83,7 +94,7 @@ const books = [
   {
     bookName: "The Da Vinci Code",
     author: "Dan Brown",
-    imageSource: "",
+    imageSource: vinci,
     bookGenre: "Thriller",
     price: "899",
     pages: 489,
@@ -93,7 +104,7 @@ const books = [
   {
     bookName: "The Alchemist",
     author: "Paulo Coelho",
-    imageSource: "",
+    imageSource: Alchemist,
     bookGenre: "Adventure",
     price: "799",
     pages: 208,
@@ -103,7 +114,7 @@ const books = [
   {
     bookName: "The Kite Runner",
     author: "Khaled Hosseini",
-    imageSource: "",
+    imageSource: kite,
     bookGenre: "Drama",
     price: "849",
     pages: 372,
@@ -114,7 +125,7 @@ const books = [
   {
     bookName: "Dune",
     author: "Frank Herbert",
-    imageSource: "",
+    imageSource: Dune,
     bookGenre: "Science Fiction",
     price: "1099",
     pages: 688,
