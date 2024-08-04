@@ -1,9 +1,10 @@
-import Bookdescription from "./bookdescription";
+import Bookdescription from "./Bookdescription";
 import image from "./image.png";
+import { Link } from "react-router-dom";
 
-const home = () => {
+const home = ({ scrollToBookCards }) => {
   return (
-    <div>
+    <div className="main-home">
       <div className="d-flex flex-row mb-3">
         <div className="p-2">
           <div
@@ -17,9 +18,12 @@ const home = () => {
               <p className="card-text home-text">
                 Get Your Favourite Book At Your Doorstep.
               </p>
-              <a href="" className="btn btn-primary btn-lg">
+              <button
+                onClick={scrollToBookCards}
+                className="btn btn-primary btn-lg"
+              >
                 Show Books
-              </a>
+              </button>
             </div>
           </div>
         </div>

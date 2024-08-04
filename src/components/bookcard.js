@@ -1,4 +1,13 @@
-const bookcard = (props) => {
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+const BookCard = (props) => {
+  const navigate = useNavigate();
+
+  const handleBuyClick = () => {
+    navigate(`/book/${props.id}`);
+  };
+
   return (
     <div>
       <div
@@ -25,17 +34,19 @@ const bookcard = (props) => {
           <p className="fs-3" style={{ position: "absolute", bottom: "3rem" }}>
             ₹ {props.price}.00
           </p>
-          <button
-            href="#"
-            className="btn btn-primary btn "
+          <Link
+            to={`/Bookdesciption/${props.id}`}
+            className="btn btn-primary"
             style={{ position: "absolute", bottom: "1rem", width: "88%" }}
+            onClick={handleBuyClick}
+            description={props.Description}
           >
             Buy
-          </button>
+          </Link>
         </div>
       </div>
     </div>
   );
 };
 
-export default bookcard;
+export default BookCard;

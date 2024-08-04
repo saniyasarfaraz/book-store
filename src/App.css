@@ -1,9 +1,39 @@
+
 body{
     background-color:#c4a27c;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+.navbar{
+    background-color: #4f2c16;
+    position: fixed;
+    z-index: 30;
+    width:100vw;
+    height:5vw;
+  }
+  header{
+    background-color: #4f2c16;
+    position: fixed;
+    top:0;
+    z-index: 20;
+    
+  }
+.nav-item{
+    margin: 20px;
+    font-size: 20px;
+    color: solid,rgb(255, 246, 234);
+  }
+   nav ul li a {
+    color:#fff5e9
+   }
+  
 .home{
     background-color:#c4a27c;
+  
+}
+.main-home{
+    /* position: relative;
+    top:-4rem; */
+    
 }
 .home-card{
     /* display: flex; */
@@ -54,6 +84,10 @@ body{
 .book-card{
     background: #f5e1bc9e;
 }
+.multiple-cards:hover{
+background-color: #f5e1bcd5;
+
+}
 
 .book-img{
     height:90vh;
@@ -71,4 +105,37 @@ body{
 
     
   }
- 
+  .footer {
+    background-color: #3E362E;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-content p {
+    margin: 0;
+  }
+  
+  .footer-content nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-content nav ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  .footer-content nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-content nav ul li a:hover {
+    text-decoration: underline;
+  }
