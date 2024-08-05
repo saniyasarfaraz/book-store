@@ -32,7 +32,7 @@ const Navbar = (scrollToBookCards) => {
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="#" style={{ color: "#fff5e9" }}>
+                <a className="nav-link" href="" style={{ color: "#fff5e9" }}>
                   Review
                 </a>
               </li>
@@ -43,10 +43,10 @@ const Navbar = (scrollToBookCards) => {
                   aria-current="page"
                   href="#"
                   style={{ color: "#fff5e9", background: "none" }}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToBookCards();
-                  }}
+                  // onClick={(e) => {
+                  //   e.preventDefault();
+                  //   scrollToBookCards();
+                  // }}
                 >
                   Books
                 </button>

@@ -36,7 +36,7 @@ const Bookdescription = (props) => {
               <p className="card-text text-body-secondary ">
                 Author: {props.author}
               </p>
-              <p className="card-text fs-4">
+              <p className="card-text fs-4" style={{ textAlign: "justify" }}>
                 <br></br>
                 <strong>Description:</strong> {props.description}
               </p>
