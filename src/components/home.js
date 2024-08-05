@@ -1,4 +1,4 @@
-import Bookdescription from "./Bookdescription";
+import Bookdescription from "./bookdescription";
 import image from "./image.png";
 import { Link } from "react-router-dom";
 
