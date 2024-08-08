@@ -30,7 +30,7 @@ const Bookdescription = (props) => {
               }}
             ></img>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6" style={{ paddingRight: "2vw" }}>
             <div className="card-body">
               <h1 className="card-title">{props.title}</h1>
               <p className="card-text text-body-secondary ">

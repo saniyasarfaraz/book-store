@@ -1,11 +1,11 @@
-import logo from "./logo.png";
+import logo from "./logo3.jpg";
 import { Link } from "react-router-dom";
 const Navbar = (scrollToBookCards) => {
   return (
     <div className="header">
       <nav className="navbar navbar-expand-lg ">
         <div className="container-fluid">
-          {<img src={logo} alt="img not found" height={70} />}
+          <img src={logo} alt="img not found" style={{ height: "70px " }} />
           {/* <span className="navbar-toggler-icon"></span>
            */}
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
