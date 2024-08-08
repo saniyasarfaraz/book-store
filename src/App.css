@@ -2,6 +2,8 @@
 body{
     background-color:#c4a27c;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
 }
 .navbar{
     background-color: #4f2c16;
@@ -139,3 +141,55 @@ background-color: #f5e1bcd5;
   .footer-content nav ul li a:hover {
     text-decoration: underline;
   }
+
+
+
+  /* sign-up css ...............*/
+
+
+  .App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form > div {
+  margin-bottom: 15px;
+}
+
+label {
+  margin-right: 10px;
+}
+
+input {
+  padding: 8px;
+  font-size: 1em;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #21a1f1;
+}

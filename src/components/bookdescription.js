@@ -1,9 +1,13 @@
 import { useParams } from "react-router-dom";
 import Books from "./assets/books";
 
-const Bookdescription = (props) => {
+const Bookdescription = (props) => 
   // const { id } = useParams();
   // const book = Books[id];
+
+
+  //  const scrollToBookdescription=()=>{
+
   return (
     <>
       <div
@@ -48,18 +52,20 @@ const Bookdescription = (props) => {
               >
                 Price: ₹ {props.price}.00
               </p>
+              
               <button
-                className="btn btn-primary btn-lg"
-                style={{ position: "absolute", bottom: "4rem", width: "6vw" }}
+               type="button" aria-setsize={10}
               >
                 Buy Now
               </button>
+
             </div>
           </div>
         </div>
       </div>
     </>
   );
-};
+}
+
 
 export default Bookdescription;

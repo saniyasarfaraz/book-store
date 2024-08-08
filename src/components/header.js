@@ -54,7 +54,7 @@ const Navbar = (scrollToBookCards) => {
             </ul>
 
             <Link
-              to="/"
+              to="book-store\src\components\Sign-up.js"
               className="btn btn-primary btn-lg"
               style={{
                 backgroundColor: "#c2a279",
