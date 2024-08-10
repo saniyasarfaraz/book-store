@@ -10,16 +10,8 @@ const BookCard = (props) => {
 
   return (
     <div>
-      <div
-        className="card book-card multiple-cards"
-        style={{ width: "17rem", height: "38rem" }}
-      >
-        <img
-          src={props.img}
-          className="card-img-top"
-          alt="..."
-          style={{ height: "22rem", padding: "0.5rem" }}
-        ></img>
+      <div className="card book-card multiple-cards">
+        <img src={props.img} className="card-img-top" alt="..."></img>
         <div className="card-body">
           <h3
             className="card-title"

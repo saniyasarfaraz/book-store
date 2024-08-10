@@ -6,11 +6,8 @@ const home = ({ scrollToBookCards }) => {
   return (
     <div className="main-home">
       <div className="d-flex flex-row mb-3">
-        <div className="p-2">
-          <div
-            className="card home"
-            style={{ border: "none", minWidth: "50vw", minHeight: "98vh" }}
-          >
+        <div className="p-2 content-box">
+          <div className="card home">
             <div className="card-body home-card">
               <h1 className="card-title home-heading home-text">
                 Online Book Store
@@ -27,7 +24,7 @@ const home = ({ scrollToBookCards }) => {
             </div>
           </div>
         </div>
-        <div className="p-2">
+        <div className="p-2 home-img">
           <img src={image} alt="background" style={{ maxWidth: "40vw" }}></img>
         </div>
       </div>

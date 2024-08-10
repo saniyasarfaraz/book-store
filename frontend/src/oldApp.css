@@ -1,4 +1,3 @@
-
 body{
     background-color:#c4a27c;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -30,11 +29,11 @@ body{
     background-color:#c4a27c;
   
 }
-.main-home{
+/* .main-home{
     /* position: relative;
     top:-4rem; */
     
-}
+/* } */ 
 .home-card{
     /* display: flex; */
     padding:auto;
