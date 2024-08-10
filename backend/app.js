@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 require("dotenv").config();
+require("./conn/conn");
 
 app.get("/", (req, res) => {
   res.send("hello from backend");
