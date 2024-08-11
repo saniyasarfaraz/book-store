@@ -51,15 +51,27 @@ const Header = (scrollToBookCards) => {
             </ul>
 
             <Link
-              to="/"
+              to="/Sign"
               className="btn btn-primary btn-lg"
               style={{
-                backgroundColor: "#c2a279",
+                backgroundColor: "blue",
                 position: "relative",
                 right: "3vw",
               }}
             >
               Sign in
+            </Link>
+
+            <Link
+              to="/Login"
+              className="btn btn-primary btn-lg"
+              style={{
+                backgroundColor: "blue",
+                position: "relative",
+                right: "1vw",
+              }}
+            >
+              Login
             </Link>
           </div>
         </div>
