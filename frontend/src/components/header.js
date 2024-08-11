@@ -1,7 +1,7 @@
 import logo from "./logo3.jpg";
 // import logo from "./l.png";
 import { Link } from "react-router-dom";
-const Header = (scrollToBookCards) => {
+const Header = () => {
   return (
     <div className="header">
       <nav className="navbar navbar-expand-lg ">
@@ -22,20 +22,20 @@ const Header = (scrollToBookCards) => {
                 </Link>
               </li>
               <li className="nav-item">
-                <a
+                <Link
+                  to="/"
                   className="nav-link active"
                   aria-current="page"
-                  href="#"
                   style={{ color: "#fff5e9" }}
                 >
                   About
-                </a>
+                </Link>
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="" style={{ color: "#fff5e9" }}>
+                <Link to="/" className="nav-link" style={{ color: "#fff5e9" }}>
                   Review
-                </a>
+                </Link>
               </li>
 
               <li className="nav-item">
