@@ -12,7 +12,7 @@ router.post("/sign-up", async (req, res) => {
         .json({ message: "Username must consists of than 3 characters " });
     }
 
-    const existingUsername = await User.find({ username: username });
+    const existingUsername = await User.findOne({ username: username });
     if (existingUsername) {
       return res.status(400).json({ message: "Username already exists " });
     }
