@@ -54,7 +54,7 @@ const Header = (scrollToBookCards) => {
               to="/Sign"
               className="btn btn-primary btn-lg"
               style={{
-                backgroundColor: "blue",
+                backgroundColor: "#c2a279",
                 position: "relative",
                 right: "3vw",
               }}
@@ -66,7 +66,7 @@ const Header = (scrollToBookCards) => {
               to="/Login"
               className="btn btn-primary btn-lg"
               style={{
-                backgroundColor: "blue",
+                backgroundColor: "#c2a279",
                 position: "relative",
                 right: "1vw",
               }}
