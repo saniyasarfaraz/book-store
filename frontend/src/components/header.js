@@ -1,7 +1,7 @@
 import logo from "./logo3.jpg";
 // import logo from "./l.png";
 import { Link } from "react-router-dom";
-const Navbar = (scrollToBookCards) => {
+const Header = (scrollToBookCards) => {
   return (
     <div className="header">
       <nav className="navbar navbar-expand-lg ">
@@ -39,18 +39,14 @@ const Navbar = (scrollToBookCards) => {
               </li>
 
               <li className="nav-item">
-                <button
+                <Link
+                  to="/books"
                   className="nav-link active"
                   aria-current="page"
-                  href="#"
                   style={{ color: "#fff5e9", background: "none" }}
-                  // onClick={(e) => {
-                  //   e.preventDefault();
-                  //   scrollToBookCards();
-                  // }}
                 >
                   Books
-                </button>
+                </Link>
               </li>
             </ul>
 
@@ -71,4 +67,4 @@ const Navbar = (scrollToBookCards) => {
     </div>
   );
 };
-export default Navbar;
+export default Header;

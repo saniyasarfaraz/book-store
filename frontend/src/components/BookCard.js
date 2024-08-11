@@ -27,11 +27,11 @@ const BookCard = (props) => {
             ₹ {props.price}.00
           </p>
           <Link
-            to={`/Bookdesciption/${props.id}`}
+            to={`/Bookdescription/${props.id}`}
             className="btn btn-primary"
             style={{ position: "absolute", bottom: "1rem", width: "88%" }}
-            onClick={handleBuyClick}
-            description={props.Description}
+            // onClick={handleBuyClick}
+            // description={props.Description}
           >
             Buy
           </Link>
