@@ -5,7 +5,8 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <p>
-          &copy; {new Date().getFullYear()} MyBookStore. All rights reserved.
+          &copy; {new Date().getFullYear()} Chapter chaser, A online book store.
+          All rights reserved.
         </p>
         <nav>
           <ul>

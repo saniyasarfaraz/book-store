@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const User = require("../models/user");
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { authenticateToken } = require("./userAuth");
 const Book = require("../models/book");
@@ -14,7 +14,7 @@ router.post("/add-book", authenticateToken, async (req, res) => {
       return res.status(400).json({ message: "You do not have access" });
     }
 
-    const book = new BookCard({
+    const book = new Book({
       url: req.body.url,
       title: req.body.title,
       author: req.body.author,
@@ -23,7 +23,7 @@ router.post("/add-book", authenticateToken, async (req, res) => {
       language: req.body.language,
     });
     await book.save();
-    res.status(200).json({ message: "Book adds succesfully" });
+    res.status(200).json({ message: "Book added succesfully" });
   } catch (error) {
     res.status(500).json({ message: "Internal server error" });
   }
@@ -45,12 +45,13 @@ router.put("/update-book", authenticateToken, async (req, res) => {
     return res.status(200).json({ message: "Book updated succesfully" });
   } catch (error) {
     console.log(error);
+
     return res.status(500).json({ message: "An error occurred" });
   }
 });
 
 //delete book
-router.delete("delete-book", authenticateToken, async (req, res) => {
+router.delete("/delete-book", authenticateToken, async (req, res) => {
   try {
     const { bookid } = req.headers;
     await Book.findByIdAndDelete(bookid);
@@ -68,7 +69,7 @@ router.get("/get-all-books", async (req, res) => {
     const books = await Book.find().sort({ createdAt: -1 });
     return res.json({
       status: "Success",
-      data: "books",
+      data: books,
     });
   } catch (error) {
     res.status(500).json({ message: "An error occured" });
@@ -81,7 +82,7 @@ router.get("/get-recent-books", async (req, res) => {
     const books = await Book.find().sort({ createdAt: -1 }).limit(10);
     return res.json({
       status: "Success",
-      data: "books",
+      data: books,
     });
   } catch (error) {
     res.status(500).json({ message: "An error occured" });
@@ -90,7 +91,7 @@ router.get("/get-recent-books", async (req, res) => {
 
 //get book by id
 
-router.get("/get-book-by-id", async (req, res) => {
+router.get("/get-book-by-id/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const book = await Book.findById(id);
