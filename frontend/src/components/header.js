@@ -51,10 +51,10 @@ const Header = () => {
             </ul>
 
             <Link
-              to="/Sign"
+              to="/Login"
               className="btn btn-primary btn-lg"
               style={{
-                backgroundColor: "blue",
+                backgroundColor: "#c4a27c",
                 position: "relative",
                 right: "3vw",
               }}
@@ -63,7 +63,7 @@ const Header = () => {
             </Link>
 
             <Link
-              to="/Login"
+              to="/Sign"
               className="btn btn-primary btn-lg"
               style={{
                 backgroundColor: "blue",

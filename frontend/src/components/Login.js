@@ -1,6 +1,6 @@
 // import React from 'react'
 
-      import React, { useState } from "react";
+import React, { useState } from "react";
 // import './Login.css'; // Optional: for custom styling
 
 function Login() {
@@ -16,7 +16,7 @@ function Login() {
 
   return (
     <div className="login-container">
-      <h2>Login</h2>
+      <h2>Sign in</h2>
       <form onSubmit={handleLogin}>
         <div className="input-group">
           <label htmlFor="username">Username</label>
@@ -39,10 +39,16 @@ function Login() {
           />
         </div>
         <br></br>
-        <button type="submit">Login</button>
+        <button
+          className="btn btn-primary btn-lg "
+          style={{ width: "100%" }}
+          type="submit"
+        >
+          Sign in
+        </button>
       </form>
     </div>
   );
 }
 
-export default Login
+export default Login;
