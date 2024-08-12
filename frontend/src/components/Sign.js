@@ -1,4 +1,7 @@
+import "./signin.css";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { FaArrowAltCircleLeft } from "react-icons/fa";
 
 const Sign = () => {
   const [formData, setFormData] = useState({
@@ -9,7 +12,7 @@ const Sign = () => {
   });
 
   const [errors, setErrors] = useState({});
-
+  const navigate = useNavigate();
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -59,54 +62,79 @@ const Sign = () => {
     }
   };
 
+  const handleBackClick = () => {
+    navigate("/"); // Navigate to the home page
+  };
+
+  const handleSignInClick = () => {
+    navigate("/Login"); // Navigate to the sign-in page
+  };
+
   return (
-    <div className="signup-container">
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Username</label>
-          <input
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-          />
-          {errors.username && <p className="error">{errors.username}</p>}
+    <div className="body">
+      <div className="sign-body">
+        <div className="back-arrow" onClick={handleBackClick}>
+          <FaArrowAltCircleLeft />
         </div>
-        <div>
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-          {errors.email && <p className="error">{errors.email}</p>}
+        <div className="login-container">
+          <h2>Sign Up</h2>
+          <form onSubmit={handleSubmit}>
+            <div>
+              <label>Username</label>
+              <input
+                type="text"
+                name="username"
+                value={formData.username}
+                onChange={handleChange}
+              />
+              {errors.username && <p className="error">{errors.username}</p>}
+            </div>
+            <div>
+              <label>Email</label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+              />
+              {errors.email && <p className="error">{errors.email}</p>}
+            </div>
+            <div>
+              <label>Password</label>
+              <input
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+              />
+              {errors.password && <p className="error">{errors.password}</p>}
+            </div>
+            <div>
+              <label>Confirm Password</label>
+              <input
+                type="password"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+              />
+              {errors.confirmPassword && (
+                <p className="error">{errors.confirmPassword}</p>
+              )}
+            </div>
+            <button className="sign-button" type="submit">
+              Sign Up
+            </button>
+          </form>
+          <div className="signup-text">
+            <p>
+              Already a user?{" "}
+              <a className="signup-link" onClick={handleSignInClick}>
+                Sign In here
+              </a>
+            </p>
+          </div>
         </div>
-        <div>
-          <label>Password</label>
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-          {errors.password && <p className="error">{errors.password}</p>}
-        </div>
-        <div>
-          <label>Confirm Password</label>
-          <input
-            type="password"
-            name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-          />
-          {errors.confirmPassword && (
-            <p className="error">{errors.confirmPassword}</p>
-          )}
-        </div>
-        <button type="submit">Sign Up</button>
-      </form>
+      </div>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import Books from "./assets/books";
+import Header from "./header";
 
 const Bookdescription = (props) => {
   const { id } = useParams();
@@ -15,6 +16,7 @@ const Bookdescription = (props) => {
   }
   return (
     <div>
+      <Header />
       <div
         className="card mb-3 "
         style={{

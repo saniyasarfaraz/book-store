@@ -8,7 +8,8 @@ import Header from "./components/header";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Sign from "./components/Sign";
-import Login from "./components/Login";
+import Signin from "./components/signin";
+// import "./components/signin.css";
 // import Footer from "./components/footer";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
   function BookList({ bookList }) {
     return (
       <div className="book-container">
+        <Header />
         {bookList.map((item, index) => (
           <BookCard
             key={index}
@@ -33,7 +35,6 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/books" element={<BookList bookList={bookList} />} />
@@ -42,7 +43,7 @@ function App() {
           element={<Bookdescription bookList={bookList} />}
         />
         <Route path="/sign" element={<Sign />} />
-        <Route path="/Login" element={<Login />} />
+        <Route path="/Login" element={<Signin />} />
       </Routes>
     </div>
   );
