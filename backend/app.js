@@ -3,12 +3,24 @@ const app = express();
 require("dotenv").config();
 require("./conn/conn");
 const user = require("./routes/user");
+
+const Favourite=require("./routes/favourite");  
+const Cart=require("./routes/cart");
+const Order=require("./routes/order");
+
 const Book = require("./routes/book");
+
 
 app.use(express.json());
 //routes
 app.use("/api/v1", user);
+
+app.use("/api/v1",Favourite); 
+app.use("/api/v1",Cart); 
+app.use("/api/v1",Order);   
+
 app.use("/api/v1", Book);
+
 
 app.get("/", (req, res) => {
   res.send("hello from backend");
