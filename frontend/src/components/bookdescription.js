@@ -51,7 +51,7 @@ const Bookdescription = (props) => {
                 <strong>Description:</strong> {book.Bookdescription}
               </p>
               <p className="card-text fs-5 ">Pages: {book.pages}</p>
-              <p className="card-text fs-5 ">Genre: {book.bookgenre}</p>
+              <p className="card-text fs-5 ">Genre: {book.bookGenre}</p>
               <p
                 className="card-text  fs-3"
                 style={{ position: "absolute", bottom: "10rem" }}

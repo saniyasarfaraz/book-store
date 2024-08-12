@@ -7,6 +7,8 @@ import BookCard from "./components/BookCard";
 import Header from "./components/header";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import Sign from "./components/Sign";
+import Login from "./components/Login";
 // import Footer from "./components/footer";
 
 function App() {
@@ -39,6 +41,8 @@ function App() {
           path="/Bookdescription/:id"
           element={<Bookdescription bookList={bookList} />}
         />
+        <Route path="/sign" element={<Sign />} />
+        <Route path="/Login" element={<Login />} />
       </Routes>
     </div>
   );
