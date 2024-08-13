@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const User = require("../models/user");
-
+const User = require("../models/book");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { authenticateToken } = require("./userAuth");
@@ -120,6 +120,51 @@ router.put("/update-address", authenticateToken, async (req, res) => {
     return res.status(200).json({ message: "address updated succssfully " });
   } catch {
     res.status(500).json({ message: "Internal server error" });
+  }
+});
+// Add a book to favorites
+router.post("/favorites/:bookId", authenticateToken, async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id); // Assuming req.user contains authenticated user data
+    if (!user) return res.status(404).json({ message: "User not found" });
+
+    const bookId = req.params.bookId;
+    if (!user.favourites.includes(bookId)) {
+      user.favourites.push(bookId);
+      await user.save();
+    }
+
+    res.json(user.favourites);
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error });
+  }
+});
+
+// Remove a book from favorites
+router.delete("/favorites/:bookId", authenticateToken, async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id);
+    if (!user) return res.status(404).json({ message: "User not found" });
+
+    const bookId = req.params.bookId;
+    user.favourites = user.favourites.filter((id) => id.toString() !== bookId);
+    await user.save();
+
+    res.json(user.favourites);
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error });
+  }
+});
+
+// Get user favorites
+router.get("/favorites", authenticateToken, async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).populate("favourites");
+    if (!user) return res.status(404).json({ message: "User not found" });
+
+    res.json(user.favourites);
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error });
   }
 });
 
