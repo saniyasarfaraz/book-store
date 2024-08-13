@@ -1,67 +1,23 @@
-// // import React from 'react'
-
-// import React, { useState } from "react";
-// // import './Login.css'; // Optional: for custom styling
-
-// function Login() {
-//   const [username, setUsername] = useState("");
-//   const [password, setPassword] = useState("");
-
-//   const handleLogin = (e) => {
-//     e.preventDefault();
-//     // You can add your authentication logic here
-//     console.log("Username:", username);
-//     console.log("Password:", password);
-//   };
-
-//   return (
-//     <div className="login-container">
-//       <h2>Sign in</h2>
-//       <form onSubmit={handleLogin}>
-//         <div className="input-group">
-//           <label htmlFor="username">Username</label>
-//           <input
-//             type="text"
-//             id="username"
-//             value={username}
-//             onChange={(e) => setUsername(e.target.value)}
-//             required
-//           />
-//         </div>
-//         <div className="input-group">
-//           <label htmlFor="password">Password</label>
-//           <input
-//             type="password"
-//             id="password"
-//             value={password}
-//             onChange={(e) => setPassword(e.target.value)}
-//             required
-//           />
-//         </div>
-//         <br></br>
-//         <button
-//           className="btn btn-primary btn-lg "
-//           style={{ width: "100%" }}
-//           type="submit"
-//         >
-//           Sign in
-//         </button>
-//       </form>
-//     </div>
-//   );
-// }
-
-// export default Login;
-
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./signin.css";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
+import axios from "axios";
 
 function Login() {
   const navigate = useNavigate();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
+  const [errors, setErrors] = useState({});
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
   const handleBackClick = () => {
     navigate("/"); // Navigate to the home page
@@ -70,8 +26,37 @@ function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     // Add your authentication logic here
-    console.log("Username:", username);
-    console.log("Password:", password);
+    console.log("Username:", formData.username);
+    console.log("Password:", formData.password);
+  };
+  const isNotFilled = () => {
+    if (formData.username === "" || formData.password === "") {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!isNotFilled) {
+      try {
+        const response = await axios.post(
+          "http://localhost:1000/api/v1/sign-up",
+          formData
+        );
+        console.log("Response:", response.data);
+        console.log(response.data);
+        navigate("/Login");
+      } catch (error) {
+        console.error(
+          "Error during sign-up:",
+          error.response?.data?.message || error.message
+        );
+        setErrors({
+          server: error.response?.data?.message || "An error occurred",
+        });
+      }
+    }
   };
 
   return (
@@ -87,8 +72,9 @@ function Login() {
             <input
               type="text"
               id="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              name="username"
+              value={formData.username}
+              onChange={handleChange}
               required
             />
           </div>
@@ -97,12 +83,18 @@ function Login() {
             <input
               type="password"
               id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
               required
             />
           </div>
-          <button className="btn btn-primary sign-button" type="submit">
+          <button
+            className="btn btn-primary sign-button"
+            type="submit"
+            onClick={handleSubmit}
+            disabled={isNotFilled}
+          >
             Sign in
           </button>
         </form>

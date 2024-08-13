@@ -94,3 +94,8 @@ body {
   .back-arrow:hover {
     color: #c4a27c;
   }
+  .error{
+    position: relative;
+    bottom: 5vw;
+    text-align: right;
+  }

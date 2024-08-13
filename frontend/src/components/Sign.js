@@ -2,21 +2,23 @@ import "./signin.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
-
+import axios from "axios";
 const Sign = () => {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
     password: "",
-    confirmPassword: "",
+    address: "",
   });
 
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
+
   const handleChange = (e) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   };
 
@@ -49,16 +51,37 @@ const Sign = () => {
       errors.confirmPassword = "Passwords do not match";
       valid = false;
     }
+    if (!formData.address) {
+      errors.address = "address is required";
+      valid = false;
+    }
 
     setErrors(errors);
     return valid;
   };
 
-  const handleSubmit = (e) => {
+  // handle sign up button
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
-      console.log("Form submitted", formData);
-      // You can add logic to submit the form data to the backend here
+      try {
+        const response = await axios.post(
+          "http://localhost:1000/api/v1/sign-up",
+          formData
+        );
+        console.log("Response:", response.data);
+        console.log(response.data);
+        navigate("/Login");
+      } catch (error) {
+        console.error(
+          "Error during sign-up:",
+          error.response?.data?.message || error.message
+        );
+        setErrors({
+          server: error.response?.data?.message || "An error occurred",
+        });
+      }
     }
   };
 
@@ -121,7 +144,21 @@ const Sign = () => {
                 <p className="error">{errors.confirmPassword}</p>
               )}
             </div>
-            <button className="sign-button" type="submit">
+            <div>
+              <label>Address</label>
+              <input
+                type="textarea"
+                name="address"
+                value={formData.address}
+                onChange={handleChange}
+              />
+              {errors.address && <p className="error">{errors.address}</p>}
+            </div>
+            <button
+              className="sign-button"
+              type="submit"
+              onClick={handleSubmit}
+            >
               Sign Up
             </button>
           </form>

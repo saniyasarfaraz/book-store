@@ -23,6 +23,7 @@ const user = new mongoose.Schema(
     avatar: {
       type: String,
       default: "https://cdn-icons-png.flaticon.com/128/3177/3177440.png",
+      // defualt: "./profile.svg",
     },
     role: {
       type: String,
@@ -33,7 +34,7 @@ const user = new mongoose.Schema(
     cart: [
       {
         type: mongoose.Types.ObjectId,
-        ref: "book",
+        ref: "Book", //"book"
       },
     ],
     orders: [

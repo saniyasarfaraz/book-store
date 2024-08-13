@@ -3,6 +3,7 @@ import Header from "./header";
 import image from "./image.png";
 import Books from "./assets/books";
 import { useRef } from "react";
+import Recentbooks from "./Recentbooks";
 import Footer from "./footer";
 const Home = () => {
   const bookCardRef = useRef(null);
@@ -65,6 +66,7 @@ const Home = () => {
           />
         ))}
       </div>
+      <Recentbooks />
       <Footer />
     </>
   );

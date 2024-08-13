@@ -15,12 +15,13 @@ router.post("/add-book", authenticateToken, async (req, res) => {
     }
 
     const book = new Book({
-      url: req.body.url,
-      title: req.body.title,
+      bookName: req.body.bookName,
       author: req.body.author,
+      imageSource: req.body.imageSource,
+      bookGenre: req.body.bookGenre,
       price: req.body.price,
-      description: req.body.description,
-      language: req.body.language,
+      pages: req.body.pages,
+      Bookdescription: req.body.Bookdescription,
     });
     await book.save();
     res.status(200).json({ message: "Book added succesfully" });
@@ -34,12 +35,13 @@ router.put("/update-book", authenticateToken, async (req, res) => {
   try {
     const { bookid } = req.headers;
     await Book.findByIdAndUpdate(bookid, {
-      url: req.body.url,
-      title: req.body.title,
+      bookName: req.body.bookName,
       author: req.body.author,
+      imageSource: req.body.imageSource,
+      BookGenre: req.body.BookGenre,
       price: req.body.price,
-      description: req.body.description,
-      language: req.body.language,
+      pages: req.body.pages,
+      Bookdescription: req.body.Bookdescription,
     });
 
     return res.status(200).json({ message: "Book updated succesfully" });

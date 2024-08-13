@@ -1,117 +1,10 @@
-// import logo from "./logo3.jpg";
-// // import logo from "./l.png";
-// import { Link } from "react-router-dom";
-// import { FaGripLines } from "react-icons/fa";
-// import { HiDotsVertical } from "react-icons/hi";
-// const Header = () => {
-//   let property = 'backgroundColor: "pink"';
-//   console.log("property" + property);
-//   const hidden = () => {
-//     property =
-//       'display: "block",visibility: "visible",height: "100vh",width: "40vw",backgroundColor: "pink",position: "absolute",right: 0,';
-//     console.log("property" + property);
-//   };
-//   return (
-//     <div className="header">
-//       <nav className="navbar navbar-expand-lg ">
-//         <div className="container-fluid">
-//           <img src={logo} alt="img not found" style={{ height: "70px " }} />
-//           {/* <span
-//             className="navbar-toggler-icon lines"
-//             style={{ color: "#fff5e9" }}
-//           ></span> */}
-
-//           <button
-//             name="line"
-//             className="lines"
-//             style={{ color: "#fff5e9", backgroundColor: "none", width: "4vw" }}
-//             onClick={hidden}
-//           >
-//             <FaGripLines />
-//             {/* <HiDotsVertical />  */}
-//           </button>
-//           <div
-//             className="hidden-nav"
-//             style={{
-//               property,
-//             }}
-//           ></div>
-//           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-//             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-//               <li className="nav-item">
-//                 <Link
-//                   className="nav-link active"
-//                   aria-current="page"
-//                   to="/"
-//                   style={{ color: "#fff5e9" }}
-//                 >
-//                   Home
-//                 </Link>
-//               </li>
-//               <li className="nav-item">
-//                 <Link
-//                   to="/"
-//                   className="nav-link active"
-//                   aria-current="page"
-//                   style={{ color: "#fff5e9" }}
-//                 >
-//                   About
-//                 </Link>
-//               </li>
-
-//               <li className="nav-item">
-//                 <Link to="/" className="nav-link" style={{ color: "#fff5e9" }}>
-//                   Review
-//                 </Link>
-//               </li>
-
-//               <li className="nav-item">
-//                 <Link
-//                   to="/books"
-//                   className="nav-link active"
-//                   aria-current="page"
-//                   style={{ color: "#fff5e9", background: "none" }}
-//                 >
-//                   Books
-//                 </Link>
-//               </li>
-//             </ul>
-
-//             <Link
-//               to="/Login"
-//               className="btn btn-primary btn-lg"
-//               style={{
-//                 backgroundColor: "#c4a27c",
-//                 position: "relative",
-//                 right: "3vw",
-//               }}
-//             >
-//               Sign in
-//             </Link>
-
-//             <Link
-//               to="/Sign"
-//               className="btn btn-primary btn-lg"
-//               style={{
-//                 backgroundColor: "blue",
-//                 position: "relative",
-//                 right: "1vw",
-//               }}
-//             >
-//               Login
-//             </Link>
-//           </div>
-//         </div>
-//       </nav>
-//     </div>
-//   );
-// };
-// export default Header;
-
 import React, { useState, useEffect } from "react";
 import logo from "./logo3.jpg";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { FaGripLines, FaArrowLeft, FaUser } from "react-icons/fa";
+import favourite from "./header icons/favourite.svg";
+import cart from "./header icons/cart.svg";
 
 const Header = () => {
   const [isNavVisible, setNavVisible] = useState(false);
@@ -134,6 +27,15 @@ const Header = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  //states reactredux
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  console.log("state " + isLoggedIn);
+
+  let flag;
+  if (isLoggedIn === false) {
+    flag = "false";
+  }
 
   return (
     <div className="header">
@@ -299,6 +201,23 @@ const Header = () => {
             >
               <FaUser style={{ marginRight: "10px" }} />
               Sign in
+            </Link>
+            <Link
+              to="favourite"
+              style={{
+                paddingRight: "2vw",
+                display: isLoggedIn ? "flex" : "none",
+              }}
+            >
+              <img src={favourite}></img>
+            </Link>
+            <Link
+              to="cart"
+              style={{
+                display: isLoggedIn ? "flex" : "none",
+              }}
+            >
+              <img src={cart}></img>
             </Link>
           </div>
         </div>

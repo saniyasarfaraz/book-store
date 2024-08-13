@@ -1,10 +1,26 @@
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Books from "./assets/books";
 import Header from "./header";
+import axios from "axios";
 
 const Bookdescription = (props) => {
+  //to fetch book desc from server
+
+  // const [Data, setData] = useState();
+  // useEffect(() => {
+  //   const fetch = async () => {
+  //     const response = await axios.get(
+  //       `http://localhost:1000/api/v1/get-book-by-id/${id}`
+  //     );
+  //     setData(response.data.data);
+  //   };
+  //   fetch();
+  // }, []);
+  // console.log("desc " + Data);
+
   const { id } = useParams();
+  console.log(id);
   const book = Books[id];
   console.log("book" + book);
   useEffect(() => {
@@ -14,6 +30,7 @@ const Bookdescription = (props) => {
   if (!book) {
     return <p>Book not found</p>; // Handle case where book is not found
   }
+
   return (
     <div>
       <Header />
