@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import logo from "./logo3.jpg";
 import { Link } from "react-router-dom";
+
 import { useSelector } from "react-redux";
 import { FaGripLines, FaArrowLeft, FaUser } from "react-icons/fa";
 import favourite from "./header icons/favourite.svg";
@@ -194,7 +195,9 @@ const Header = () => {
               to="/Login"
               className="btn btn-primary btn-lg"
               style={{
+
                 backgroundColor: "#c4a27c",
+
                 position: "relative",
                 right: "3vw",
               }}
@@ -205,8 +208,10 @@ const Header = () => {
             <Link
               to="favourite"
               style={{
+
                 paddingRight: "2vw",
                 display: isLoggedIn ? "flex" : "none",
+
               }}
             >
               <img src={favourite}></img>

@@ -1,8 +1,10 @@
 const router = require("express").Router();
 const User = require("../models/user");
+
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { authenticateToken } = require("./userAuth");
+
 
 //sign up
 router.post("/sign-up", async (req, res) => {
@@ -31,13 +33,16 @@ router.post("/sign-up", async (req, res) => {
         .json({ message: "Password must contains atleast 8 characters " });
     }
 
-    const hashPass = await bcrypt.hash(password, 10);
 
+    const hashPass = await bcrypt.hash(password, 10);
+r
     //create new user
     const newUser = new User({
       username: username,
       email: email,
+
       password: hashPass,
+
       address: address,
     });
 
@@ -49,6 +54,7 @@ router.post("/sign-up", async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 });
+
 
 //sign in
 router.post("/sign-in", async (req, res) => {
@@ -113,5 +119,6 @@ router.put("/update-address", authenticateToken, async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 });
+
 
 module.exports = router;

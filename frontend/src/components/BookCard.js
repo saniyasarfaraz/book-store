@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 
 const BookCard = (props) => {
+
   console.log(props.id);
+
   return (
     <div>
       <div className="card book-card multiple-cards">
