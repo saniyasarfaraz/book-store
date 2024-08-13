@@ -1,13 +1,6 @@
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const BookCard = (props) => {
-  const navigate = useNavigate();
-
-  const handleBuyClick = () => {
-    navigate(`/book/${props.id}`);
-  };
-
   return (
     <div>
       <div className="card book-card multiple-cards">

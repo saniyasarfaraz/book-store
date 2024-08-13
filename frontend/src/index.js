@@ -11,28 +11,10 @@ import Login from "./components/Login";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// );
-
 root.render(
   <BrowserRouter>
-
-<Routes>
-          <Route path="/sign" element={<Sign/>} /> 
-          <Route path ="/" element={<App/> } />
-          <Route path="/Login" element={<Login/>} /> 
-
-      </Routes> 
-    {/* <App /> */}
-  </BrowserRouter>,
-  document.getElementById("root")
-  // document.getElementById("root")
+    <App />
+  </BrowserRouter>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
