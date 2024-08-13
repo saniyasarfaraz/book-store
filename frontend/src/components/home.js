@@ -3,12 +3,14 @@ import Header from "./header";
 import image from "./image.png";
 import Books from "./assets/books";
 import { useRef } from "react";
+import Allbooks from "./AllBook";
 
 import Recentbooks from "./Recentbooks";
 
 import Footer from "./footer";
 const Home = () => {
   const bookCardRef = useRef(null);
+  const notFromserver = true;
 
   const scrollToBookCards = () => {
     console.log(bookCardRef);
@@ -53,20 +55,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div ref={bookCardRef} className="book-container">
-        {Books.map((item, index) => (
-          <BookCard
-            key={index}
-            id={index}
-            img={item.imageSource}
-            title={item.bookName}
-            author={item.author}
-            description={item.Bookdescription}
-            price={item.price}
-            genre={item.bookGenre}
-            pages={item.pages}
-          />
-        ))}
+      <div ref={bookCardRef}>
+        <Allbooks />
       </div>
 
       <Recentbooks />

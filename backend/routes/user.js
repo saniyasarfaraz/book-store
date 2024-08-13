@@ -5,56 +5,59 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { authenticateToken } = require("./userAuth");
 
-
 //sign up
+
 router.post("/sign-up", async (req, res) => {
   try {
     const { username, email, password, address } = req.body;
 
+    // Validate username
     if (username.length < 3) {
       return res
         .status(400)
-        .json({ message: "Username must consists of than 3 characters " });
+        .json({ message: "Username must consist of more than 3 characters" });
     }
 
+    // Check if the username already exists
     const existingUsername = await User.findOne({ username: username });
     if (existingUsername) {
-      return res.status(400).json({ message: "Username already exists " });
+      return res.status(400).json({ message: "Username already exists" });
     }
 
+    // Check if the email already exists
     const existingEmail = await User.findOne({ email: email });
     if (existingEmail) {
-      return res.status(400).json({ message: "email already registered " });
+      return res.status(400).json({ message: "Email already registered" });
     }
 
+    // Validate password length
     if (password.length < 8) {
       return res
         .status(400)
-        .json({ message: "Password must contains atleast 8 characters " });
+        .json({ message: "Password must contain at least 8 characters" });
     }
 
-
+    // Hash the password
     const hashPass = await bcrypt.hash(password, 10);
-r
-    //create new user
+
+    // Create new user
     const newUser = new User({
       username: username,
       email: email,
-
       password: hashPass,
-
       address: address,
     });
 
-    console.log("Received POST request at /sign-up");
-    console.log("Request body:", req.body);
+    // Save user to the database
     await newUser.save();
-    return res.status(200).json({ message: "Sign Up succsessful" });
+
+    // Respond with success message
+    return res.status(200).json({ message: "Sign Up successful" });
   } catch (error) {
-    res.status(500).json({ message: "Internal server error" });
+    console.error("Error in sign-up route:", error);
+    return res.status(500).json({ message: "Internal server error" });
   }
 });
-
 
 //sign in
 router.post("/sign-in", async (req, res) => {
@@ -119,6 +122,5 @@ router.put("/update-address", authenticateToken, async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 });
-
 
 module.exports = router;

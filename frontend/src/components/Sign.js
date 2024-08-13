@@ -3,11 +3,13 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import axios from "axios";
+
 const Sign = () => {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
     password: "",
+    confirmPassword: "",
     address: "",
   });
 
@@ -27,12 +29,12 @@ const Sign = () => {
     let errors = {};
 
     if (!formData.username) {
-      errors.username = "Username is required";
+      errors.username = "Username is required*";
       valid = false;
     }
 
     if (!formData.email) {
-      errors.email = "Email is required";
+      errors.email = "Email is required*";
       valid = false;
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       errors.email = "Email is invalid";
@@ -40,7 +42,7 @@ const Sign = () => {
     }
 
     if (!formData.password) {
-      errors.password = "Password is required";
+      errors.password = "Password is required*";
       valid = false;
     } else if (formData.password.length < 6) {
       errors.password = "Password must be at least 6 characters";
@@ -51,16 +53,15 @@ const Sign = () => {
       errors.confirmPassword = "Passwords do not match";
       valid = false;
     }
+
     if (!formData.address) {
-      errors.address = "address is required";
+      errors.address = "Address is required*";
       valid = false;
     }
 
     setErrors(errors);
     return valid;
   };
-
-  // handle sign up button
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -71,13 +72,10 @@ const Sign = () => {
           formData
         );
         console.log("Response:", response.data);
-        console.log(response.data);
+
         navigate("/Login");
       } catch (error) {
-        console.error(
-          "Error during sign-up:",
-          error.response?.data?.message || error.message
-        );
+        alert(error.response?.data?.message || error.message);
         setErrors({
           server: error.response?.data?.message || "An error occurred",
         });
@@ -95,14 +93,14 @@ const Sign = () => {
 
   return (
     <div className="body">
-      <div className="sign-body">
-        <div className="back-arrow" onClick={handleBackClick}>
-          <FaArrowAltCircleLeft />
-        </div>
+      <div className="sign-body" style={{ width: "100vw" }}>
         <div className="login-container">
+          <div className="back-arrow" onClick={handleBackClick}>
+            <FaArrowAltCircleLeft />
+          </div>
           <h2>Sign Up</h2>
           <form onSubmit={handleSubmit}>
-            <div>
+            <div className="form-group">
               <label>Username</label>
               <input
                 type="text"
@@ -110,9 +108,11 @@ const Sign = () => {
                 value={formData.username}
                 onChange={handleChange}
               />
-              {errors.username && <p className="error">{errors.username}</p>}
+              {errors.username && (
+                <p className="error name-error">{errors.username}</p>
+              )}
             </div>
-            <div>
+            <div className="form-group">
               <label>Email</label>
               <input
                 type="email"
@@ -120,9 +120,11 @@ const Sign = () => {
                 value={formData.email}
                 onChange={handleChange}
               />
-              {errors.email && <p className="error">{errors.email}</p>}
+              {errors.email && (
+                <p className="error email-error">{errors.email}</p>
+              )}
             </div>
-            <div>
+            <div className="form-group">
               <label>Password</label>
               <input
                 type="password"
@@ -130,9 +132,11 @@ const Sign = () => {
                 value={formData.password}
                 onChange={handleChange}
               />
-              {errors.password && <p className="error">{errors.password}</p>}
+              {errors.password && (
+                <p className="error password-error">{errors.password}</p>
+              )}
             </div>
-            <div>
+            <div className="form-group">
               <label>Confirm Password</label>
               <input
                 type="password"
@@ -141,24 +145,23 @@ const Sign = () => {
                 onChange={handleChange}
               />
               {errors.confirmPassword && (
-                <p className="error">{errors.confirmPassword}</p>
+                <p className="error confirm-error">{errors.confirmPassword}</p>
               )}
             </div>
-            <div>
+            <div className="form-group">
               <label>Address</label>
               <input
-                type="textarea"
+                type="text"
+                style={{ width: "100%" }}
                 name="address"
                 value={formData.address}
                 onChange={handleChange}
               />
-              {errors.address && <p className="error">{errors.address}</p>}
+              {errors.address && (
+                <p className="address-error error">{errors.address}</p>
+              )}
             </div>
-            <button
-              className="sign-button"
-              type="submit"
-              onClick={handleSubmit}
-            >
+            <button className="sign-button" type="submit">
               Sign Up
             </button>
           </form>

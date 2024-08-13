@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { FaGripLines, FaArrowLeft, FaUser } from "react-icons/fa";
 import favourite from "./header icons/favourite.svg";
 import cart from "./header icons/cart.svg";
+import Profile from "./profile.png";
 
 const Header = () => {
   const [isNavVisible, setNavVisible] = useState(false);
@@ -129,6 +130,50 @@ const Header = () => {
                   Books
                 </Link>
               </li>
+              <li className="nav-item" style={{ margin: "5px 0" }}>
+                <Link
+                  to="/favourite"
+                  className="nav-link"
+                  style={{
+                    display: isLoggedIn ? "flex" : "none",
+                    color: "#fff5e9",
+                    fontSize: "20px",
+                  }}
+                >
+                  <img
+                    src={favourite}
+                    style={{
+                      width: "2.5vw",
+                      position: "absolute",
+                      top: "2vh",
+                      right: "6vw",
+                    }}
+                  ></img>
+                  favourites
+                </Link>
+              </li>
+              <li className="nav-item" style={{ margin: "5px 0" }}>
+                <Link
+                  to="/cart"
+                  className="nav-link"
+                  style={{
+                    display: isLoggedIn ? "flex" : "none",
+                    color: "#fff5e9",
+                    fontSize: "20px",
+                  }}
+                >
+                  <img
+                    src={cart}
+                    style={{
+                      width: "2.5vw",
+                      position: "absolute",
+                      top: "2vh",
+                      right: "2vw",
+                    }}
+                  ></img>
+                  cart
+                </Link>
+              </li>
             </ul>
 
             {/* Sign In Button at Bottom */}
@@ -195,9 +240,8 @@ const Header = () => {
               to="/Login"
               className="btn btn-primary btn-lg"
               style={{
-
                 backgroundColor: "#c4a27c",
-
+                display: isLoggedIn ? "none" : "block",
                 position: "relative",
                 right: "3vw",
               }}
@@ -206,23 +250,32 @@ const Header = () => {
               Sign in
             </Link>
             <Link
-              to="favourite"
+              to="/favourite"
               style={{
-
                 paddingRight: "2vw",
                 display: isLoggedIn ? "flex" : "none",
-
               }}
             >
-              <img src={favourite}></img>
+              <img src={favourite} style={{ height: "2.5vw" }}></img>
             </Link>
             <Link
-              to="cart"
+              to="/cart"
               style={{
                 display: isLoggedIn ? "flex" : "none",
               }}
             >
-              <img src={cart}></img>
+              <img src={cart} style={{ height: "2.5vw" }}></img>
+            </Link>
+            <Link
+              to="/profile"
+              style={{
+                display: isLoggedIn ? "flex" : "none",
+              }}
+            >
+              <img
+                src={Profile}
+                style={{ height: "3vw", marginLeft: "3vw" }}
+              ></img>
             </Link>
           </div>
         </div>

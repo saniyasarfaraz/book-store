@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Books from "./assets/books";
 import Header from "./header";
@@ -6,28 +6,34 @@ import axios from "axios";
 
 const Bookdescription = (props) => {
   //to fetch book desc from server
-
-  // const [Data, setData] = useState();
-  // useEffect(() => {
-  //   const fetch = async () => {
-  //     const response = await axios.get(
-  //       `http://localhost:1000/api/v1/get-book-by-id/${id}`
-  //     );
-  //     setData(response.data.data);
-  //   };
-  //   fetch();
-  // }, []);
-  // console.log("desc " + Data);
-
   const { id } = useParams();
-  console.log(id);
-  const book = Books[id];
-  console.log("book" + book);
+  const navigate = useNavigate();
+
+  const [Data, setData] = useState();
+  useEffect(() => {
+    const fetch = async () => {
+      const response = await axios.get(
+        `http://localhost:1000/api/v1/get-book-by-id/${id}`
+      );
+      console.log(response.data.data);
+      setData(response.data.data);
+    };
+    fetch();
+  }, []);
+  console.log(Data);
+
+  // console.log("id is" + id);
+  // const book = Books[id];
+  // console.log(book);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  if (!book) {
+  function buy() {
+    alert("Your order placed Suceesfully");
+    navigate("/");
+  }
+  if (!Data) {
     return <p>Book not found</p>; // Handle case where book is not found
   }
 
@@ -48,7 +54,7 @@ const Bookdescription = (props) => {
         <div className="row g-0 book-card" style={{}}>
           <div className="col-md-6 ">
             <img
-              src={book.imageSource}
+              src={Data.imageSource}
               className="img-fluid rounded-start book-img"
               alt="a book"
               style={{
@@ -61,25 +67,26 @@ const Bookdescription = (props) => {
           </div>
           <div className="col-md-6">
             <div className="card-body">
-              <h1 className="card-title">{book.bookName}</h1>
+              <h1 className="card-title">{Data.bookName}</h1>
               <p className="card-text text-body-secondary ">
-                Author: {book.author}
+                Author: {Data.author}
               </p>
               <p className="card-text fs-4" style={{ textAlign: "justify" }}>
                 <br></br>
-                <strong>Description:</strong> {book.Bookdescription}
+                <strong>Description:</strong> {Data.Bookdescription}
               </p>
-              <p className="card-text fs-5 ">Pages: {book.pages}</p>
-              <p className="card-text fs-5 ">Genre: {book.bookGenre}</p>
+              <p className="card-text fs-5 ">Pages: {Data.pages}</p>
+              <p className="card-text fs-5 ">Genre: {Data.bookGenre}</p>
               <p
                 className="card-text  fs-3"
                 style={{ position: "absolute", bottom: "10rem" }}
               >
-                Price: ₹ {book.price}.00
+                Price: ₹ {Data.price}.00
               </p>
               <button
                 className="btn btn-primary btn-lg"
                 style={{ position: "absolute", bottom: "4rem", width: "6vw" }}
+                onClick={buy}
               >
                 Buy Now
               </button>

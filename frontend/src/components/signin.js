@@ -3,14 +3,19 @@ import { Link, useNavigate } from "react-router-dom";
 import "./signin.css";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import axios from "axios";
+import { authActions } from "../components/store/auth";
+import { useDispatch } from "react-redux";
+import Header from "./header";
 
-function Login() {
+const Login = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
   const [errors, setErrors] = useState({});
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -23,50 +28,58 @@ function Login() {
     navigate("/"); // Navigate to the home page
   };
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    // Add your authentication logic here
-    console.log("Username:", formData.username);
-    console.log("Password:", formData.password);
-  };
   const isNotFilled = () => {
-    if (formData.username === "" || formData.password === "") {
-      return true;
-    } else {
-      return false;
-    }
+    return formData.username === "" || formData.password === "";
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!isNotFilled) {
+
+    if (!isNotFilled()) {
       try {
         const response = await axios.post(
-          "http://localhost:1000/api/v1/sign-up",
+          "http://localhost:1000/api/v1/sign-in",
           formData
         );
-        console.log("Response:", response.data);
-        console.log(response.data);
-        navigate("/Login");
-      } catch (error) {
-        console.error(
-          "Error during sign-up:",
-          error.response?.data?.message || error.message
+
+        // Dispatch the login action correctly
+        dispatch(
+          authActions.login({
+            // id: response.data.id,
+            // token: response.data.token,
+            // role: response.data.role,
+          })
         );
+
+        dispatch(authActions.changeRole(response.data.role));
+
+        localStorage.setItem("id", response.data.id);
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("role", response.data.role);
+
+        navigate("/"); // Redirect to dashboard after successful login
+      } catch (error) {
+        alert(error.response?.data?.message || "An error occurred");
         setErrors({
           server: error.response?.data?.message || "An error occurred",
         });
       }
+    } else {
+      setErrors({
+        form: "Please fill out all fields",
+      });
     }
   };
 
   return (
     <div className="body">
+      <Header />
       <div className="login-container">
         <div className="back-arrow" onClick={handleBackClick}>
           <FaArrowAltCircleLeft />
         </div>
         <h2 className="sign-h2">Sign in</h2>
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleSubmit}>
           <div className="input-group">
             <label htmlFor="username">Username</label>
             <input
@@ -89,11 +102,12 @@ function Login() {
               required
             />
           </div>
+          {errors.form && <p className="error">{errors.form}</p>}
+          {errors.server && <p className="error">{errors.server}</p>}
           <button
             className="btn btn-primary sign-button"
             type="submit"
-            onClick={handleSubmit}
-            disabled={isNotFilled}
+            disabled={isNotFilled()}
           >
             Sign in
           </button>
@@ -107,6 +121,6 @@ function Login() {
       </div>
     </div>
   );
-}
+};
 
 export default Login;

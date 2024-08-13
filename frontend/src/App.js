@@ -12,6 +12,7 @@ import Sign from "./components/Sign";
 import Signin from "./components/signin";
 import Cart from "./components/Cart";
 import Favourite from "./components/Favourite";
+import Allbook from "./components/AllBook";
 
 // import "./components/signin.css";
 
@@ -42,7 +43,8 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/books" element={<BookList bookList={bookList} />} />
+        {/* <Route path="/books" element={<BookList bookList={bookList} />} /> */}
+        <Route path="/books" element={<Allbook />} />
         <Route
           path="/Bookdescription/:id"
           element={<Bookdescription bookList={bookList} />}
