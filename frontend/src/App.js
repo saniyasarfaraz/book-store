@@ -13,11 +13,11 @@ import Signin from "./components/signin";
 import Cart from "./components/Cart";
 import Favourite from "./components/Favourite";
 import Allbook from "./components/AllBook";
-// src/index.js or src/App.js
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faShoppingCart, faHeart } from "@fortawesome/free-solid-svg-icons";
+// import { library } from "@fortawesome/fontawesome-svg-core";
+// import { faShoppingCart, faHeart } from "@fortawesome/free-solid-svg-icons";
+import Sidebar from "./components/Sidebar";
 
-library.add(faShoppingCart, faHeart);
+// library.add(faShoppingCart, faHeart);
 
 // import "./components/signin.css";
 
@@ -59,6 +59,7 @@ function App() {
         <Route path="cart" element={<Cart />} />
         <Route path="favourite" element={<Favourite />}></Route>
       </Routes>
+      <Sidebar />
     </div>
   );
 }

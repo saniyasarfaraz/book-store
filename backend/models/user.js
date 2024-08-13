@@ -22,7 +22,9 @@ const user = new mongoose.Schema(
     },
     avatar: {
       type: String,
-      default: "https://cdn-icons-png.flaticon.com/128/3177/3177440.png",
+      default:
+        "https://th.bing.com/th/id/OIP.I3CuRhnCriikZ4KcNIzZrgHaHa?w=880&h=880&rs=1&pid=ImgDetMain",
+      // default: "https://cdn-icons-png.flaticon.com/128/3177/3177440.png",
       // defualt: "./profile.svg",
     },
     role: {
