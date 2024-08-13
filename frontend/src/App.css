@@ -496,3 +496,18 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+/* styles.css or similar */
+.icons-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1rem;
+}
+.icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+.icon {
+  font-size: 24px;
+  cursor: pointer;
+}

@@ -2,6 +2,10 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Books from "./assets/books";
 import Header from "./header";
+import React from 'react';
+import CartIcon from './CartIcon';
+import FavoritesIcon from './FavoritesIcon';
+
 import axios from "axios";
 
 const Bookdescription = (props) => {
@@ -18,7 +22,7 @@ const Bookdescription = (props) => {
   //   fetch();
   // }, []);
   // console.log("desc " + Data);
-
+  
   const { id } = useParams();
   console.log(id);
   const book = Books[id];
@@ -34,6 +38,10 @@ const Bookdescription = (props) => {
   return (
     <div>
       <Header />
+      <div className="icons-container" style={{textAlign:"right",margin:"1rem"}}>
+        <FavoritesIcon className="icon" onclick={()=> console.log('favorites icon clicked')}/>
+          <CartIcon className="icon" onclick={()=> console.log('cart icon clicked')}/>
+        </div>
       <div
         className="card mb-3 "
         style={{

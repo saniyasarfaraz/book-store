@@ -12,6 +12,12 @@ import Sign from "./components/Sign";
 import Signin from "./components/signin";
 import Cart from "./components/Cart";
 import Favourite from "./components/Favourite";
+// src/index.js or src/App.js
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faShoppingCart, faHeart } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faShoppingCart, faHeart);
+
 
 // import "./components/signin.css";
 
