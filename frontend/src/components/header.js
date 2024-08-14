@@ -241,12 +241,12 @@ const Header = () => {
               className="btn btn-primary btn-lg"
               style={{
                 backgroundColor: "#c4a27c",
-                display: isLoggedIn ? "none" : "block",
+                display: isLoggedIn ? "none" : "inline",
                 position: "relative",
                 right: "3vw",
               }}
             >
-              <FaUser style={{ marginRight: "10px" }} />
+              <FaUser style={{ marginRight: "10px", display: "inline" }} />
               Sign in
             </Link>
             <Link

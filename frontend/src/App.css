@@ -1,3 +1,4 @@
+
 body {
   background-color: #c4a27c;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -510,4 +511,32 @@ button:hover {
 .icon {
   font-size: 24px;
   cursor: pointer;
+}
+
+
+
+.book-card{
+  background: #f5e1bc9e;
+}
+.multiple-cards:hover{
+background-color: #f5e1bcd5;
+
+}
+
+/* to fix bookcard */
+.book-img{
+  height:90vh;
+}
+.book-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 98vw;
+  margin: 1vw;
+  
+}
+.multiple-cards{
+  margin:0.5rem;
+  margin-bottom: 2.1rem;
+
+  
 }

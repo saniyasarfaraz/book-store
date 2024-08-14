@@ -3,13 +3,26 @@ import { useEffect, useState } from "react";
 import Books from "./assets/books";
 import Header from "./header";
 import React from "react";
-import CartIcon from "./CartIcon";
-import FavoritesIcon from "./FavoritesIcon";
-
+// import CartIcon from './CartIcon';
+// import FavoritesIcon from './FavoritesIcon';
+import CartIcon from "./header icons/cart.svg";
+import FavoritesIcon from "./header icons/favourite.svg";
 import axios from "axios";
 
 const Bookdescription = (props) => {
   //to fetch book desc from server
+
+  // const [Data, setData] = useState();
+  // useEffect(() => {
+  //   const fetch = async () => {
+  //     const response = await axios.get(
+  //       `http://localhost:1000/api/v1/get-book-by-id/${id}`
+  //     );
+  //     setData(response.data.data);
+  //   };
+  //   fetch();
+  // }, []);
+  // console.log("desc " + Data);
 
   const { id } = useParams();
   const navigate = useNavigate();

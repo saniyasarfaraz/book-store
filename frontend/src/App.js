@@ -6,13 +6,14 @@ import Books from "./components/assets/books";
 import BookCard from "./components/BookCard";
 import Header from "./components/header";
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Sign from "./components/Sign";
 import Signin from "./components/signin";
-import Cart from "./components/Cart";
+import Cart from "./components/cart";
 import Favourite from "./components/Favourite";
 import Allbook from "./components/AllBook";
+import Profile from "./components/Profile";
 // import { library } from "@fortawesome/fontawesome-svg-core";
 // import { faShoppingCart, faHeart } from "@fortawesome/free-solid-svg-icons";
 import Sidebar from "./components/Sidebar";
@@ -56,8 +57,11 @@ function App() {
         />
         <Route path="/sign" element={<Sign />} />
         <Route path="/Login" element={<Signin />} />
-        <Route path="cart" element={<Cart />} />
-        <Route path="favourite" element={<Favourite />}></Route>
+        <Route path="/profile" element={<Profile />}>
+          <Route index element={<Favourite />} />
+        </Route>
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/favourite" element={<Favourite />}></Route>
       </Routes>
       <Sidebar />
     </div>
