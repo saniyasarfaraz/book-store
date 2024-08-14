@@ -50,7 +50,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/books" element={<BookList bookList={bookList} />} /> */}
-        <Route path="/books" element={<Allbook />} />
+        <Route path="/books" element={<BookList />} />
         <Route
           path="/Bookdescription/:id"
           element={<Bookdescription bookList={bookList} />}
