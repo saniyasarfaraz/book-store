@@ -40,6 +40,9 @@ header {
 nav ul li a {
   color: #fff5e9;
 }
+.nav-links:hover{
+color: #c4a27c;
+}
 
 .home {
   background-color: #c4a27c;
