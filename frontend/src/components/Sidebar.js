@@ -57,8 +57,9 @@ const Sidebar = ({ data }) => {
           style={{
             color: "#fff5e9",
             position: "relative",
-            left: "8vw",
-            bottom: "2vw",
+            left: "-8vw",
+
+            top: "-2vw",
           }}
           onClick={handleBackClick}
         >
@@ -96,17 +97,18 @@ const Sidebar = ({ data }) => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          color: "#c4a27c", // Light brown color for links
+          color: "#fff5e9", // Light brown color for links
         }}
       >
         <Link
           to="/profile"
+          className="nav-links"
           style={{
             width: "100%",
             textAlign: "center",
             padding: "10px 0",
             fontSize: "18px",
-            color: "#c4a27c",
+            color: "#fff5e9 ",
             textDecoration: "none",
           }}
         >
@@ -114,12 +116,13 @@ const Sidebar = ({ data }) => {
         </Link>
         <Link
           to="/profile/orderHistory"
+          className="nav-links"
           style={{
             width: "100%",
             textAlign: "center",
             padding: "10px 0",
             fontSize: "18px",
-            color: "#c4a27c",
+            color: "#fff5e9",
             textDecoration: "none",
           }}
         >
@@ -127,12 +130,13 @@ const Sidebar = ({ data }) => {
         </Link>
         <Link
           to="/profile/settings"
+          className="nav-links"
           style={{
             width: "100%",
             textAlign: "center",
             padding: "10px 0",
             fontSize: "18px",
-            color: "#c4a27c",
+            color: " #fff5e9",
             textDecoration: "none",
           }}
         >
