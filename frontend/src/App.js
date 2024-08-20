@@ -70,7 +70,7 @@
 
 // export default App;
 import "bootstrap/dist/css/bootstrap.min.css";
-import Bookdescription from "./components/Bookdescription"; // Updated import
+import Bookdescription from "./components/bookdescription"; // Updated import
 import Home from "./components/home";
 import "./App.css";
 import Books from "./components/assets/books";
@@ -81,11 +81,13 @@ import { useState } from "react";
 
 import Sign from "./components/Sign";
 import Signin from "./components/signin";
-import Cart from "./components/Cart";
-import Favourite from "./components/Favourite";
+import Cart from "./components/cart";
+import Favourite from "./components/profile/Favourite";
 import Allbook from "./components/AllBook";
-import Profile from "./components/Profile";
-import Sidebar from "./components/Sidebar";
+import Profile from "./components/profile/Profile";
+import Sidebar from "./components/profile/Sidebar";
+import OrderHistory from "./components/profile/orderHistory";
+import Settings from "./components/profile/settings";
 
 function App() {
   const [bookList, setBookList] = useState(Books);
@@ -114,14 +116,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/books" element={<Allbook />} />
-        <Route
-          path="/Bookdescription/:id"
-          element={<Bookdescription bookList={bookList} />}
-        />
+        <Route path="/Bookdescription/:id" element={<Bookdescription />} />
         <Route path="/sign" element={<Sign />} />
         <Route path="/Login" element={<Signin />} />
         <Route path="/profile" element={<Profile />}>
           <Route index element={<Favourite />} />
+          <Route path="/profile/orderHistory" element={<OrderHistory />} />
+          <Route path="/profile/settings" element={<Settings />} />
         </Route>
         <Route path="/cart" element={<Cart />} />
         <Route path="/favourite" element={<Favourite />}></Route>

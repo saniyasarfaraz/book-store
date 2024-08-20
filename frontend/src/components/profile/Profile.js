@@ -3,7 +3,7 @@ import Sidebar from "./Sidebar";
 import { Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
-import Header from "./header";
+import Header from "../header";
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);
