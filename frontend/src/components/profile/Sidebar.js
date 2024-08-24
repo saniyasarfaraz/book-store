@@ -3,11 +3,18 @@ import { Link } from "react-router-dom";
 import { FaArrowLeft, FaUser } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { authActions } from "../store/auth";
 
 const Sidebar = ({ data }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleBackClick = () => {
     navigate("/"); // Navigate to the sign-in page
+  };
+  const Logout = () => {
+    dispatch(authActions.logout());
+    navigate("/");
   };
   if (!data) {
     return (
@@ -91,7 +98,7 @@ const Sidebar = ({ data }) => {
       </div>
 
       <div
-        className="nav-links"
+        // className="nav-links"
         style={{
           marginTop: "auto",
           display: "flex",
@@ -163,6 +170,7 @@ const Sidebar = ({ data }) => {
             color: "#fff5e9",
             fontSize: "18px",
           }}
+          onClick={Logout}
         >
           <FaUser style={{ marginRight: "10px" }} />
           Log Out

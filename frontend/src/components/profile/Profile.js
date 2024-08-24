@@ -27,40 +27,54 @@ const Profile = () => {
       }
     };
     fetchProfile();
-  }, [headers]);
+  }, []);
 
   return (
-    <div
-      className="bg-c4a27c px-2 md:px-12 flex flex-col md:flex-row h-screen py-8 gap-4 text-white"
-      style={{
-        backgroundColor: "#c4a27c",
-        width: "98vw",
-        marginTop: "5.2vw",
-        height: "85vh",
-        marginLeft: "0.1vw",
-        marginRight: "0.3vw",
-        borderRadius: "0.2rem",
-      }}
-    >
+    <>
       <Header />
-      {profile ? (
-        <>
-          <div className="w-1/6" style={{ display: "inline-block" }}>
-            <Sidebar data={profile} />
-          </div>
-          <div className="w-5/6" style={{ display: "inline-block" }}>
-            <Outlet />
-          </div>
-        </>
-      ) : (
-        <p
-          className="w-full h-{100%} flex item-center justify-center"
-          style={{ color: "4f2c16", alignSelf: "center", display: "none" }}
-        >
-          Loading...
-        </p>
-      )}
-    </div>
+      <div
+        className="bg-c4a27c px-2 md:px-12 flex flex-col md:flex-row h-screen py-8 gap-4 text-white"
+        style={{
+          backgroundColor: "#c4a27c",
+          width: "100vw",
+          display: "flex",
+
+          // marginTop: "5.5vw",
+          height: "85vh",
+
+          borderRadius: "0.2rem",
+        }}
+      >
+        {profile ? (
+          <>
+            <div
+              className="w-1/6"
+              style={{ display: "inline-block", marginTop: "5.5vw" }}
+            >
+              <Sidebar data={profile} />
+            </div>
+            <div
+              className="w-5/6"
+              style={{
+                width: "99vw",
+                display: "inline-block",
+                position: "relative",
+                // top: "-2vw",
+              }}
+            >
+              <Outlet />
+            </div>
+          </>
+        ) : (
+          <p
+            className="w-full h-{100%} flex item-center justify-center"
+            style={{ color: "4f2c16", alignSelf: "center", display: "none" }}
+          >
+            Loading...
+          </p>
+        )}
+      </div>
+    </>
   );
 };
 

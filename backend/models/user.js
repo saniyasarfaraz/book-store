@@ -36,7 +36,7 @@ const user = new mongoose.Schema(
     cart: [
       {
         type: mongoose.Types.ObjectId,
-        ref: "Book", //"book"
+        ref: "book", //"book"
       },
     ],
     orders: [

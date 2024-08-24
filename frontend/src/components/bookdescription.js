@@ -86,14 +86,17 @@ const Bookdescription = (props) => {
         }}
       >
         <div className="row g-0 book-card" style={{}}>
-          <div className="col-md-6 ">
+          <div
+            className="col-md-6 "
+            style={{ display: "flex", backgroundColor: "#f5e1bc31" }}
+          >
             <img
               src={Data.imageSource}
-              className="img-fluid rounded-start book-img"
+              className="img-fluid  book-img"
               alt="a book"
               style={{
-                margin: "2rem",
-                marginLeft: "5vw",
+                // margin: "2rem",
+                // marginLeft: "5vw",
 
                 maxHeight: "85vh",
               }}
@@ -127,8 +130,7 @@ const Bookdescription = (props) => {
                   display: "inline-block",
                   borderRadius: "50%",
                   display: "flex",
-                  position: "relative",
-                  top: "2rem",
+                  marginTop: "6vh",
                   visibility:
                     isLoggedIn && localStorage.role == "user"
                       ? "visible"
@@ -137,67 +139,65 @@ const Bookdescription = (props) => {
               >
                 <RiHeartAdd2Line className="large-icon" />
               </span>
-              <button
-                className="btn btn-primary btn-lg"
-                style={{
-                  position: "relative",
-                  top: "3rem",
-                  right: "10rem",
-                  width: "48%",
-                  display: localStorage.role == "user" ? "block" : "none",
-                }}
-                onClick={buy}
-              >
-                Buy Now
-              </button>
-              <button
-                className=" btn btn-primary btn-lg cart-button"
-                style={{
-                  display:
-                    isLoggedIn && localStorage.role == "user"
-                      ? "block"
-                      : "none",
-                  position: "relative",
-                  top: "0rem",
-                  left: "10rem",
-                  width: "48%",
-                }}
-                onClick={handleCart}
-              >
-                <IoMdCart />
-                &nbsp; Add to Cart
-              </button>
-              <button
-                className="btn btn-primary btn-lg"
-                style={{
-                  position: "relative",
-                  top: "3rem",
-                  width: "48%",
-                  display:
-                    localStorage.role == "admin" ? "inline-block" : "none",
-                }}
-              >
-                <FiEdit style={{ marginRight: "0.5rem" }} />
-                Edit Book
-              </button>
+              <div className="button-box">
+                <button
+                  className="btn btn-primary btn-lg decription-button"
+                  style={{
+                    display: localStorage.role == "user" ? "block" : "none",
+                    position: !isLoggedIn ? "relative" : "static",
+                    right: !isLoggedIn ? "20vw" : 0,
+                  }}
+                  onClick={buy}
+                >
+                  Buy Now
+                </button>
+                <button
+                  className=" btn btn-primary btn-lg cart-button"
+                  style={{
+                    display:
+                      isLoggedIn && localStorage.role == "user"
+                        ? "block"
+                        : "none",
+                  }}
+                  onClick={handleCart}
+                >
+                  <IoMdCart />
+                  &nbsp; Add to Cart
+                </button>
+              </div>
+              <div className="button-box">
+                <button
+                  className="btn btn-primary btn-lg"
+                  style={{
+                    position: "relative",
+                    top: "3rem",
+                    width: "48%",
+                    display:
+                      localStorage.role == "admin" ? "inline-block" : "none",
+                  }}
+                >
+                  <FiEdit style={{ marginRight: "0.5rem" }} />
+                  Edit Book
+                </button>
 
-              <button
-                className=" btn btn-primary btn-lg cart-button"
-                style={{
-                  display:
-                    isLoggedIn && localStorage.role == "admin"
-                      ? "block"
-                      : "none",
-                  position: "relative",
-                  top: "0rem",
-                  left: "10rem",
-                  width: "48%",
-                }}
-                onClick={buy}
-              >
-                <RiDeleteBin6Line />
-                &nbsp; Delete Book
-              </button>
+                <button
+                  className=" btn btn-primary btn-lg cart-button"
+                  style={{
+                    display:
+                      isLoggedIn && localStorage.role == "admin"
+                        ? "block"
+                        : "none",
+                    position: "relative",
+                    top: "0rem",
+                    left: "10rem",
+                    width: "48%",
+                  }}
+                  onClick={buy}
+                >
+                  <RiDeleteBin6Line />
+                  &nbsp; Delete Book
+                </button>
+              </div>
             </div>
           </div>
         </div>
