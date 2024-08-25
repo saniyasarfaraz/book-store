@@ -169,9 +169,6 @@ const Bookdescription = (props) => {
                 <button
                   className="btn btn-primary btn-lg"
                   style={{
-                    position: "relative",
-                    top: "3rem",
-                    width: "48%",
                     display:
                       localStorage.role == "admin" ? "inline-block" : "none",
                   }}
@@ -187,9 +184,7 @@ const Bookdescription = (props) => {
                       isLoggedIn && localStorage.role == "admin"
                         ? "block"
                         : "none",
-                    position: "relative",
-                    top: "0rem",
-                    left: "10rem",
+
                     width: "48%",
                   }}
                   onClick={buy}

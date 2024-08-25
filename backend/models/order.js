@@ -8,11 +8,11 @@ const order = new mongoose.Schema(
     },
     book: {
       type: mongoose.Types.ObjectId,
-      ref: "book",
+      ref: "books",
     },
     status: {
       type: String,
-      default: "Order Places",
+      default: "Order Placed",
       enum: ["Order Placed", "Out for delivery", "Canceled"],
     },
   },
