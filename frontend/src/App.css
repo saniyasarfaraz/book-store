@@ -137,6 +137,13 @@ nav ul li a {
   color: #3E362E;
 }
 
+
+.addbook-text {
+  font-size: 1rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #3E362E;
+}
+
 .home-heading {
   font-size: 4rem;
   font-family: Georgia, 'Times New Roman', Times, serif;

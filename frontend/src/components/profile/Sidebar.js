@@ -177,7 +177,7 @@ const Sidebar = ({ data }) => {
             )}
             {role === "admin" && (
               <Link
-                to="/profile/allorders"
+                to="/profile"
                 className="nav-links"
                 style={{
                   width: "100%",

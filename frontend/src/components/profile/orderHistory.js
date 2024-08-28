@@ -2,21 +2,21 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const OrderHistory = () => {
-  //   const [orderHistory, setOrderHistory] = useState();
-  //   const headers = {
-  //     id: localStorage.getItem("id"),
-  //     authorization: `Bearer ${localStorage.getItem("token")}`,
-  //   };
-  //   useEffect(() => {
-  //     const fetch = async () => {
-  //       const response = await axios.get(
-  //         "http://localhost:1000/api/v1/get-order-history",
-  //         { headers }
-  //       );
-  //       setOrderHistory(response.data.data);
-  //     };
-  //     fetch();
-  //   }, []);
+  const [orderHistory, setOrderHistory] = useState();
+  const headers = {
+    id: localStorage.getItem("id"),
+    authorization: `Bearer ${localStorage.getItem("token")}`,
+  };
+  useEffect(() => {
+    const fetch = async () => {
+      const response = await axios.get(
+        "http://localhost:1000/api/v1/get-order-history",
+        { headers }
+      );
+      setOrderHistory(response.data.data);
+    };
+    fetch();
+  }, []);
 
   return (
     <div>
@@ -86,7 +86,7 @@ const OrderHistory = () => {
           </div>
         </div>
       </div>
-      {/* )} */}
+      {/*  )} */}
     </div>
   );
 };

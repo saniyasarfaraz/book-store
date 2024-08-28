@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import Bookdescription from "./components/bookdescription"; // Updated import
+import Bookdescription from "./components/bookdescription";
 import Home from "./components/home";
 import "./App.css";
 import Books from "./components/assets/books";
@@ -17,6 +17,8 @@ import Profile from "./components/profile/Profile";
 import Sidebar from "./components/profile/Sidebar";
 import OrderHistory from "./components/profile/orderHistory";
 import Settings from "./components/profile/settings";
+import AddBook from "./components/profile/AddBook";
+import AllOrder from "./components/profile/AllOrders";
 
 function App() {
   const [bookList, setBookList] = useState(Books);
@@ -52,6 +54,8 @@ function App() {
           <Route index element={<Favourite />} />
           <Route path="/profile/orderHistory" element={<OrderHistory />} />
           <Route path="/profile/settings" element={<Settings />} />
+          <Route index element={<AllOrder />} />
+          <Route path="/profile/addbook" element={<AddBook />} />
         </Route>
         <Route path="/cart" element={<Cart />} />
         <Route path="/favourite" element={<Favourite />}></Route>

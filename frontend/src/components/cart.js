@@ -13,6 +13,7 @@ const Cart = () => {
   const [total, setTotal] = useState(0);
 
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const role = useSelector((state) => state.auth.role);
 
   const headers = {
     id: localStorage.getItem("id"),
