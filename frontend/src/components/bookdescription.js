@@ -70,6 +70,16 @@ const Bookdescription = (props) => {
     // alert(response.data.message);
     toast.success("Book added to cart successfully!");
   };
+   
+  const deleteBook = async() => {
+   const response= await axios.delete (
+    "http://localhost:1000/api/v1//delete-book",
+    {headers}
+  );
+  alert (response.data.message);
+ navigate("/all-books");
+}
+
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   if (!Data) {
     return <p>Book not found</p>; // Handle case where book is not found
@@ -181,6 +191,7 @@ const Bookdescription = (props) => {
                   Edit Book
                 </button>
 
+
                 <button
                   className=" btn btn-primary btn-lg cart-button"
                   style={{
@@ -192,11 +203,13 @@ const Bookdescription = (props) => {
                     width: "48%",
                   }}
                   // onClick={}
+                  onClick={deleteBook}
                 >
                   <RiDeleteBin6Line />
                   &nbsp; Delete Book
                 </button>
               </div>
+
             </div>
           </div>
         </div>
