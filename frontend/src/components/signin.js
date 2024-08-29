@@ -25,7 +25,7 @@ const Login = () => {
   };
 
   const handleBackClick = () => {
-    navigate("/"); // Navigate to the home page
+    navigate("/");
   };
 
   const isNotFilled = () => {
@@ -42,20 +42,16 @@ const Login = () => {
           formData
         );
 
-        // Dispatch the login action correctly
-        dispatch(
-          authActions.login({
-            // id: response.data.id,
-            // token: response.data.token,
-            // role: response.data.role,
-          })
-        );
+        const { id, token, role } = response.data;
 
-        dispatch(authActions.changeRole(response.data.role));
+        // Save login data in localStorage
+        localStorage.setItem("id", id);
+        localStorage.setItem("token", token);
+        localStorage.setItem("role", role);
 
-        localStorage.setItem("id", response.data.id);
-        localStorage.setItem("token", response.data.token);
-        localStorage.setItem("role", response.data.role);
+        // Dispatch the login action
+        dispatch(authActions.login({ role }));
+        dispatch(authActions.changeRole(role));
 
         navigate("/"); // Redirect to dashboard after successful login
       } catch (error) {

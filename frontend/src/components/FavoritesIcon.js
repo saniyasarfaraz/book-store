@@ -1,7 +1,7 @@
-// src/components/FavoritesIcon.js
+// src/components/favouritesIcon.js
 import React from "react";
 import { BsSuitHeart } from "react-icons/bs";
-const FavoritesIcon = ({ onClick }) => {
+const favouritesIcon = ({ onClick }) => {
   return (
     <div onClick={onClick} style={{ cursor: "pointer" }}>
       <BsSuitHeart />
@@ -9,4 +9,4 @@ const FavoritesIcon = ({ onClick }) => {
   );
 };
 
-export default FavoritesIcon;
+export default favouritesIcon;

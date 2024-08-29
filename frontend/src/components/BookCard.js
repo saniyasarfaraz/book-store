@@ -28,7 +28,7 @@ const BookCard = (props) => {
             // onClick={handleBuyClick}
             // description={props.Description}
           >
-            Buy
+            View Details
           </Link>
         </div>
       </div>
