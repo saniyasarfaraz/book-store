@@ -66,6 +66,16 @@ const Bookdescription = (props) => {
     );
     alert(response.data.message);
   };
+   
+  const deleteBook = async() => {
+   const response= await axios.delete (
+    "http://localhost:1000/api/v1//delete-book",
+    {headers}
+  );
+  alert (response.data.message);
+ navigate("/all-books");
+}
+
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   if (!Data) {
     return <p>Book not found</p>; // Handle case where book is not found
@@ -193,7 +203,7 @@ const Bookdescription = (props) => {
                   left: "10rem",
                   width: "48%",
                 }}
-                onClick={buy}
+                onClick={deleteBook}
               >
                 <RiDeleteBin6Line />
                 &nbsp; Delete Book
