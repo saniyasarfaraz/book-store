@@ -70,15 +70,15 @@ const Bookdescription = (props) => {
     // alert(response.data.message);
     toast.success("Book added to cart successfully!");
   };
-   
-  const deleteBook = async() => {
-   const response= await axios.delete (
-    "http://localhost:1000/api/v1//delete-book",
-    {headers}
-  );
-  alert (response.data.message);
- navigate("/all-books");
-}
+
+  const deleteBook = async () => {
+    const response = await axios.delete(
+      "http://localhost:1000/api/v1//delete-book",
+      { headers }
+    );
+    alert(response.data.message);
+    navigate("/books");
+  };
 
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   if (!Data) {
@@ -191,7 +191,6 @@ const Bookdescription = (props) => {
                   Edit Book
                 </button>
 
-
                 <button
                   className=" btn btn-primary btn-lg cart-button"
                   style={{
@@ -209,7 +208,6 @@ const Bookdescription = (props) => {
                   &nbsp; Delete Book
                 </button>
               </div>
-
             </div>
           </div>
         </div>
