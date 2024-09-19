@@ -79,7 +79,16 @@ const Bookdescription = (props) => {
     alert(response.data.message);
     navigate("/books");
   };
-
+  const updateBook = async () => {
+    console.log("chll gya1");
+    const response = await axios.put(
+      "http://localhost:1000/api/v1/update-book",
+      { headers }
+    );
+    console.log("chll gya2");
+    alert(response.data.message);
+    navigate("/updatebook");
+  };
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   if (!Data) {
     return <p>Book not found</p>; // Handle case where book is not found
@@ -157,7 +166,10 @@ const Bookdescription = (props) => {
                 <button
                   className="btn btn-primary btn-lg decription-button"
                   style={{
-                    display: localStorage.role == "user" ? "block" : "none",
+                    display:
+                      isLoggedIn && localStorage.role == "admin"
+                        ? "none"
+                        : "block",
                     position: !isLoggedIn ? "relative" : "static",
                     right: !isLoggedIn ? "20vw" : 0,
                   }}
@@ -186,6 +198,7 @@ const Bookdescription = (props) => {
                     display:
                       localStorage.role == "admin" ? "inline-block" : "none",
                   }}
+                  onClick={updateBook}
                 >
                   <FiEdit style={{ marginRight: "0.5rem" }} />
                   Edit Book

@@ -18,7 +18,7 @@ const UpdateBook = () => {
 
   const headers = {
     id: localStorage.getItem("id"),
-    authorization: Bearer`${localStorage.getItem("token")}`,
+    authorization: `Bearer${localStorage.getItem("token")}`,
   };
 
   const change = (e) => {

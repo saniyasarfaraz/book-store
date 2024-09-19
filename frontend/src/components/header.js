@@ -111,14 +111,14 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav-item" style={{ margin: "5px 0" }}>
-                <Link
+                {/* <Link
                   className="nav-link"
                   to="/"
                   style={{ color: "#fff5e9", fontSize: "20px" }}
                   onClick={toggleNavVisibility}
                 >
                   Review
-                </Link>
+                </Link> */}
               </li>
               <li className="nav-item" style={{ margin: "5px 0" }}>
                 <Link
@@ -135,7 +135,10 @@ const Header = () => {
                   to="/favourite"
                   className="nav-link"
                   style={{
-                    display: isLoggedIn ? "flex" : "none",
+                    display:
+                      isLoggedIn && localStorage.role == "user"
+                        ? "flex"
+                        : "none",
                     color: "#fff5e9",
                     fontSize: "20px",
                   }}
@@ -157,7 +160,10 @@ const Header = () => {
                   to="/cart"
                   className="nav-link"
                   style={{
-                    display: isLoggedIn ? "flex" : "none",
+                    display:
+                      isLoggedIn && localStorage.role == "user"
+                        ? "flex"
+                        : "none",
                     color: "#fff5e9",
                     fontSize: "20px",
                   }}
@@ -217,12 +223,12 @@ const Header = () => {
                   About
                 </Link>
               </li>
-
+              {/* 
               <li className="nav-item">
                 <Link to="/" className="nav-link" style={{ color: "#fff5e9" }}>
                   Review
                 </Link>
-              </li>
+              </li> */}
 
               <li className="nav-item">
                 <Link
@@ -253,7 +259,8 @@ const Header = () => {
               to="/favourite"
               style={{
                 paddingRight: "2vw",
-                display: isLoggedIn ? "flex" : "none",
+                display:
+                  isLoggedIn && localStorage.role == "user" ? "flex" : "none",
               }}
             >
               <img src={favourite} style={{ height: "2.5vw" }}></img>
@@ -261,7 +268,8 @@ const Header = () => {
             <Link
               to="/cart"
               style={{
-                display: isLoggedIn ? "flex" : "none",
+                display:
+                  isLoggedIn && localStorage.role == "user" ? "flex" : "none",
               }}
             >
               <img src={cart} style={{ height: "2.5vw" }}></img>

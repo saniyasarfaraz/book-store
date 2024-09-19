@@ -19,6 +19,7 @@ import OrderHistory from "./components/profile/orderHistory";
 import Settings from "./components/profile/settings";
 import AddBook from "./components/profile/AddBook";
 import AllOrder from "./components/profile/AllOrders";
+import Update from "./components/update";
 
 function App() {
   const [bookList, setBookList] = useState(Books);
@@ -58,6 +59,7 @@ function App() {
           <Route path="/profile/addbook" element={<AddBook />} />
         </Route>
         <Route path="/cart" element={<Cart />} />
+        <Route path="/updatebook" element={<Update />} />
         <Route path="/favourite" element={<Favourite />}></Route>
       </Routes>
       <Sidebar />

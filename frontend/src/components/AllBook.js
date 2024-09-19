@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import BookCard from "./BookCard";
 import axios from "axios";
+import Header from "./header";
 
 const Recentbooks = () => {
   const [Data, setData] = useState();
@@ -15,20 +16,23 @@ const Recentbooks = () => {
   }, []);
   console.log(Data);
   return (
-    <div className="book-container">
-      {Data &&
-        Data.map((item, index) => (
-          <BookCard
-            key={index}
-            id={item._id}
-            img={item.imageSource}
-            title={item.bookName}
-            author={item.author}
-            genre={item.bookGenre}
-            price={item.price}
-          />
-        ))}
-    </div>
+    <>
+      <Header />
+      <div className="book-container " style={{ marginTop: "6vw" }}>
+        {Data &&
+          Data.map((item, index) => (
+            <BookCard
+              key={index}
+              id={item._id}
+              img={item.imageSource}
+              title={item.bookName}
+              author={item.author}
+              genre={item.bookGenre}
+              price={item.price}
+            />
+          ))}
+      </div>
+    </>
   );
 };
 
