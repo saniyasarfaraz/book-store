@@ -67,13 +67,13 @@ const Bookdescription = (props) => {
       {},
       { headers }
     );
-    // alert(response.data.message);
-    toast.success("Book added to cart successfully!");
+    alert(response.data.message);
+    // toast.success("Book added to cart successfully!");
   };
 
   const deleteBook = async () => {
     const response = await axios.delete(
-      "http://localhost:1000/api/v1//delete-book",
+      "http://localhost:1000/api/v1/delete-book",
       { headers }
     );
     alert(response.data.message);

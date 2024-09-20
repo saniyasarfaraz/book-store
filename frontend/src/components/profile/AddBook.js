@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { Navigate } from "react-router-dom";
 const AddBook = () => {
   const [image, setImage] = useState("");
   console.log(image, 12);
@@ -52,6 +53,7 @@ const AddBook = () => {
           Bookdescription: "",
         });
         alert(response.data.message);
+        // Navigate("/books");
       }
     } catch (error) {
       console.log(error.response.data.message);

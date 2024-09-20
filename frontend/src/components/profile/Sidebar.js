@@ -143,7 +143,7 @@ const Sidebar = ({ data }) => {
                 Favourites
               </Link>
             )}
-            {isLoggedIn && role === "user" && (
+            {/* {isLoggedIn && role === "user" && (
               <Link
                 to="/profile/orderHistory"
                 className="nav-links"
@@ -174,10 +174,10 @@ const Sidebar = ({ data }) => {
               >
                 Settings
               </Link>
-            )}
+            )} */}
             {role === "admin" && (
               <Link
-                to="/profile"
+                to="/profile/allorder"
                 className="nav-links"
                 style={{
                   width: "100%",

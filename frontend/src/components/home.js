@@ -59,7 +59,7 @@ const Home = () => {
         <Allbooks />
       </div>
 
-      <Recentbooks />
+      {/* <Recentbooks /> */}
 
       <Footer />
     </>

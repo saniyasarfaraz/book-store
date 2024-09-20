@@ -55,7 +55,8 @@ function App() {
           <Route index element={<Favourite />} />
           <Route path="/profile/orderHistory" element={<OrderHistory />} />
           <Route path="/profile/settings" element={<Settings />} />
-          <Route index element={<AllOrder />} />
+          {/* <Route index element={<AllOrder />} /> */}
+          <Route path="/profile/allorder" element={<AllOrder />} />
           <Route path="/profile/addbook" element={<AddBook />} />
         </Route>
         <Route path="/cart" element={<Cart />} />
