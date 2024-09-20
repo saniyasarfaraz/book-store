@@ -45,7 +45,7 @@ const Cart = () => {
         { headers }
       );
       alert(response.data.message);
-      navigate("/profile/orderHistory");
+      navigate("/");
     } catch (error) {
       console.error("Error placing order:", error);
       alert("Error placing order. Please try again.");
