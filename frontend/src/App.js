@@ -20,6 +20,7 @@ import Settings from "./components/profile/settings";
 import AddBook from "./components/profile/AddBook";
 import AllOrder from "./components/profile/AllOrders";
 import Update from "./components/update";
+import About from "./components/about";
 
 function App() {
   const [bookList, setBookList] = useState(Books);
@@ -47,6 +48,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />}></Route>
         <Route path="/books" element={<Allbook />} />
         <Route path="/Bookdescription/:id" element={<Bookdescription />} />
         <Route path="/sign" element={<Sign />} />

@@ -103,7 +103,7 @@ const Header = () => {
               <li className="nav-item" style={{ margin: "5px 0" }}>
                 <Link
                   className="nav-link"
-                  to="/"
+                  to="/about"
                   style={{ color: "#fff5e9", fontSize: "20px" }}
                   onClick={toggleNavVisibility}
                 >
@@ -215,7 +215,7 @@ const Header = () => {
               </li>
               <li className="nav-item">
                 <Link
-                  to="/"
+                  to="/about"
                   className="nav-link active"
                   aria-current="page"
                   style={{ color: "#fff5e9" }}
