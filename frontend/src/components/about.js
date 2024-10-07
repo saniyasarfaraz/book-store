@@ -50,12 +50,6 @@ const About = () => {
           tirelessly to bring this vision to life using modern web technologies
           like the MERN stack (MongoDB, Express.js, React.js, Node.js).{" "}
           <br></br>
-          <br></br>Starting as a college project, Chapter Chaser quickly grew
-          into something more. What began as a simple exercise in developing an
-          online bookstore has transformed into a platform that continues to
-          grow and serve readers. Today, Chapter Chaser remains committed to
-          providing an effortless book-shopping experience and fostering a
-          community of passionate readers.
         </p>
         <h2
           className="home-heading"

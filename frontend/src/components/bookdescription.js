@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Books from "./assets/books";
 import Header from "./header";
 import axios from "axios";
@@ -52,6 +53,7 @@ const Bookdescription = (props) => {
     authorization: `Bearer ${localStorage.getItem("token")}`,
     bookid: id,
   };
+
   const favclick = async () => {
     const response = await axios.put(
       "http://localhost:1000/api/v1/add-book-to-favourite",
@@ -198,12 +200,16 @@ const Bookdescription = (props) => {
                     display:
                       localStorage.role == "admin" ? "inline-block" : "none",
                   }}
-                  onClick={updateBook}
+                  // onClick={updateBook}
                 >
-                  <FiEdit style={{ marginRight: "0.5rem" }} />
-                  Edit Book
+                  <Link
+                    to={`/updatebook/${id}`}
+                    style={{ color: "white", textDecoration: "none" }}
+                  >
+                    <FiEdit style={{ marginRight: "0.5rem" }} />
+                    Edit Book
+                  </Link>
                 </button>
-
                 <button
                   className=" btn btn-primary btn-lg cart-button"
                   style={{

@@ -62,7 +62,7 @@ function App() {
           <Route path="/profile/addbook" element={<AddBook />} />
         </Route>
         <Route path="/cart" element={<Cart />} />
-        <Route path="/updatebook" element={<Update />} />
+        <Route path="/updatebook/:id" element={<Update />} />
         <Route path="/favourite" element={<Favourite />}></Route>
       </Routes>
       <Sidebar />

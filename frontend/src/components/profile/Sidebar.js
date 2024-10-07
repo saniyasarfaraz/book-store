@@ -143,7 +143,7 @@ const Sidebar = ({ data }) => {
                 Favourites
               </Link>
             )}
-            {/* {isLoggedIn && role === "user" && (
+            {isLoggedIn && role === "user" && (
               <Link
                 to="/profile/orderHistory"
                 className="nav-links"
@@ -159,7 +159,7 @@ const Sidebar = ({ data }) => {
                 Order History
               </Link>
             )}
-            {isLoggedIn && role === "user" && (
+            {/* {isLoggedIn && role === "user" && (
               <Link
                 to="/profile/settings"
                 className="nav-links"

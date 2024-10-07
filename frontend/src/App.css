@@ -18,6 +18,12 @@ body {
   justify-content: space-between;
 }
 
+.nav-link:active {
+  font-weight: bolder;
+
+}
+
+
 header {
   background-color: #4f2c16;
   position: fixed;
@@ -200,6 +206,7 @@ nav ul li a {
   margin-bottom: 2.1rem;
   width: 20rem;
   height: 34rem;
+  /* height: 34rem; */
 
 }
 

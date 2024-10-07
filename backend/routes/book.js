@@ -38,7 +38,7 @@ router.put("/update-book", authenticateToken, async (req, res) => {
       bookName: req.body.bookName,
       author: req.body.author,
       imageSource: req.body.imageSource,
-      BookGenre: req.body.BookGenre,
+      bookGenre: req.body.bookGenre,
       price: req.body.price,
       pages: req.body.pages,
       Bookdescription: req.body.Bookdescription,
