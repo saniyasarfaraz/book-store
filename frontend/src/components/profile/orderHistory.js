@@ -51,7 +51,7 @@ const OrderHistory = () => {
               borderRadius: 0,
               borderCollapse: "collapse",
               maxWidth: "99vw",
-              minHeight: "20vh",
+
               maxHeight: "45vh",
               border: "0.5px solid #3e362e40",
               backgroundColor: "#f5e1bc9e",
@@ -59,29 +59,29 @@ const OrderHistory = () => {
             }}
           >
             <div className="row g-0 book-card">
-              <div className="col-md-10">
-                <div className="card-body">
-                  <div style={{ display: "flex", width: "100%" }}>
-                    <p className="card-text" style={{ width: "5%" }}>
-                      S. No.
-                    </p>
-                    <p className="card-text" style={{ width: "30%" }}>
-                      Book Name
-                    </p>
-                    <p className="card-text" style={{ width: "20%" }}>
-                      Author
-                    </p>
-                    <p className="card-text" style={{ width: "10%" }}>
-                      Price
-                    </p>
-                    <p className="card-text" style={{ width: "15%" }}>
-                      Status
-                    </p>
-                    <p className="card-text" style={{ width: "10%" }}>
-                      Mode
-                    </p>
-                  </div>
+              {/* <div className="col-md-10"> */}
+              <div className="card-body">
+                <div style={{ display: "flex", width: "100%" }}>
+                  <p className="card-text" style={{ width: "5%" }}>
+                    S. No.
+                  </p>
+                  <p className="card-text" style={{ width: "30%" }}>
+                    Book Name
+                  </p>
+                  <p className="card-text" style={{ width: "20%" }}>
+                    Author
+                  </p>
+                  <p className="card-text" style={{ width: "10%" }}>
+                    Price
+                  </p>
+                  <p className="card-text" style={{ width: "15%" }}>
+                    Status
+                  </p>
+                  <p className="card-text" style={{ width: "10%" }}>
+                    Mode
+                  </p>
                 </div>
+                {/* </div> */}
               </div>
             </div>
           </div>
@@ -95,7 +95,7 @@ const OrderHistory = () => {
                 borderRadius: 0,
                 borderCollapse: "collapse",
                 maxWidth: "99vw",
-                minHeight: "20vh",
+                // minHeight: "20vh",
                 border: "0.5px solid #3e362e40",
                 backgroundColor: "#f5e1bc9e",
                 margin: 0,

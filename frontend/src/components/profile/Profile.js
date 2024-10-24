@@ -36,7 +36,7 @@ const Profile = () => {
         className="bg-c4a27c px-2 md:px-12 flex flex-col md:flex-row h-screen py-8 gap-4 text-white"
         style={{
           backgroundColor: "#c4a27c",
-          width: "100vw",
+          width: "99vw",
           display: "flex",
 
           // marginTop: "5.5vw",
@@ -56,7 +56,7 @@ const Profile = () => {
             <div
               className="w-5/6"
               style={{
-                width: "99vw",
+                width: "87vw",
                 display: "inline-block",
                 position: "relative",
                 // top: "-2vw",

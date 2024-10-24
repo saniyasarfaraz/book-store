@@ -17,7 +17,12 @@ const Bookdescription = (props) => {
   //to fetch book desc from server
   const { id } = useParams();
   const navigate = useNavigate();
-
+  // const [book, setBook] = useState([]);
+  const headers = {
+    id: localStorage.getItem("id"),
+    authorization: `Bearer ${localStorage.getItem("token")}`,
+    bookid: id,
+  };
   const [Data, setData] = useState();
   useEffect(() => {
     const fetch = async () => {
@@ -39,19 +44,19 @@ const Bookdescription = (props) => {
     window.scrollTo(0, 0);
   }, []);
 
-  function buy() {
+  const buy = async () => {
     if (isLoggedIn) {
-      alert("Your order placed Suceesfully");
+      // const response = await axios.post(
+      //   "http://localhost:1000/api/v1/place-order",
+      //   { order: Data },
+      //   { headers }
+      // );
+      alert("Order Placed Successfully");
       navigate("/");
     } else {
       alert("Please login to buy the book");
       navigate("/Login");
     }
-  }
-  const headers = {
-    id: localStorage.getItem("id"),
-    authorization: `Bearer ${localStorage.getItem("token")}`,
-    bookid: id,
   };
 
   const favclick = async () => {
