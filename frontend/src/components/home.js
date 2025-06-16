@@ -56,10 +56,13 @@ const Home = () => {
         </div>
       </div>
       <div ref={bookCardRef}>
-        <Allbooks />
+        {/* <Allbooks /> */}
+        <hr style={{ height: "4px" }}></hr>
+        <h3 style={{ fontWeight: "Bold", marginLeft: "2vw" }}>
+          Recently Added Books
+        </h3>
+        <Recentbooks />
       </div>
-
-      {/* <Recentbooks /> */}
 
       <Footer />
     </>

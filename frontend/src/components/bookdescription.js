@@ -10,8 +10,8 @@ import FavouriteIcon from "./header icons/favourite.svg";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEdit } from "react-icons/fi";
 import { RiHeartAdd2Line } from "react-icons/ri";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import { ToastContainer, toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 
 const Bookdescription = (props) => {
   //to fetch book desc from server
