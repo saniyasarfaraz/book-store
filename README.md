@@ -1,70 +1,136 @@
-# Getting Started with Create React App
+# 📚 Chapter Chaser - A Online Bookstore
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Chapter Chaser** is a full-stack MERN (MongoDB, Express.js, React.js, Node.js) web application that allows users to browse, search, and purchase books online. It includes both user and admin functionalities such as viewing book details, managing orders, and maintaining book inventory.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+### 👤 User Module
+- Register and Login using JWT authentication
+- Browse available books
+- Search and filter books
+- View detailed book descriptions
+- Add books to Cart or Favourites
+- Place orders (Cash on Delivery)
+- View order history
 
-Runs the app in the development mode.\
-Open [http://localhost:3000] (http://localhost:3000) to view it in your browser.
+### 🛠️ Admin Module
+- Admin login with JWT
+- Add, update, and delete books
+- View all orders placed by users
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🧰 Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Technology     | Usage                                         |
+|----------------|-----------------------------------------------|
+| **MongoDB**    | Database for storing user data and orders     |
+| **Express.js** | Backend framework for API handling            |
+| **React.js**   | Frontend library for UI rendering             |
+| **Node.js**    | Backend runtime                               |
+| **JWT**        | For secure authentication                     |
+| **Axios**      | HTTP client for frontend-backend communication|
+| **CSS** / **Bootstrap** | Styling and responsive design       |
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📁 Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+Chapter-Chaser/
+├── client/                # React frontend
+│   ├── components/        # Reusable components like BookCard, Cart, etc.
+│   └── pages/             # Route pages like Home, Login, OrderHistory, etc.
+├── server/                # Node.js backend
+│   ├── models/            # Mongoose models (User, Book, Order)
+│   ├── routes/            # API routes
+│   ├── controllers/       # Business logic
+│   └── middleware/        # Auth middleware
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## ⚙️ Installation Steps
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Prerequisites:
+- Node.js and npm installed
+- MongoDB installed locally or use MongoDB Atlas
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 1. Clone the Repository
+```bash
+git clone https://github.com/YOUR-USERNAME/Chapter-Chaser.git
+cd Chapter-Chaser
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 2. Setup Server
+```bash
+cd server
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Create a `.env` file in the `/server` directory and add:
+```
+PORT=1000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+```
 
-## Learn More
+### 3. Setup Client
+```bash
+cd ../client
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 4. Run the Application
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Start Backend:
+```bash
+cd ../server
+npm start
+```
 
-### Code Splitting
+#### Start Frontend:
+```bash
+cd ../client
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Access the app at: [http://localhost:3000](http://localhost:3000)
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🧪 Sample Admin Credentials (for Testing)
 
-### Making a Progressive Web App
+```
+Email: admin@example.com
+Password: admin123
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 📸 Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+You can include screenshots here:
+- Home Page
+- Book Detail Page
+- Cart & Checkout Page
+- Admin Dashboard
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📦 Deployment
 
-### `npm run build` fails to minify
+To deploy this app:
+- **Frontend:** Vercel or Netlify
+- **Backend:** Render, Railway, or Cyclic
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 🧑‍💻 Author
+
+**Saniya Sarfaraz**  
+MERN Stack Developer  
+GitHub: [https://github.com/saniya-sarfaraz](https://github.com/saniya-sarfaraz)
+

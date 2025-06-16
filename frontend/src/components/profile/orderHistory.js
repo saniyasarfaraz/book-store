@@ -13,7 +13,7 @@ const OrderHistory = () => {
       try {
         console.log("Fetching order history...");
         const response = await axios.get(
-          "http://localhost:1000/api/v1/get-order-history",
+          "https://book-store-backend-n9gm.onrender.com/api/v1/get-order-history",
           { headers }
         );
         console.log("jguyg");
@@ -150,7 +150,7 @@ export default OrderHistory;
 //     const fetch = async () => {
 //       console.log("OUT");
 //       const response = await axios.get(
-//         "http://localhost:1000/api/v1/get-order-history",
+//         "https://book-store-backend-n9gm.onrender.com/api/v1/get-order-history",
 //         { headers }
 //       );
 //       console.log(response);

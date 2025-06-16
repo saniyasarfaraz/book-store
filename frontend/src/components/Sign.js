@@ -68,7 +68,7 @@ const Sign = () => {
     if (validate()) {
       try {
         const response = await axios.post(
-          "http://localhost:1000/api/v1/sign-up",
+          "https://book-store-backend-n9gm.onrender.com/api/v1/sign-up",
           formData
         );
         console.log("Response:", response.data);
