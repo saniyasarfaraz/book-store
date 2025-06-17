@@ -27,7 +27,7 @@ const AddBook = () => {
         alert("All filles are requrired");
       } else {
         const response = await axios.post(
-          "https://book-store-backend-n9gm.onrender.com/api/v1/add-book",
+          "http://localhost:1000https://book-store-backend-n9gm.onrender.com/api/v1/add-book",
           Data,
           { Headers }
         );

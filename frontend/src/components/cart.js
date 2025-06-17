@@ -24,7 +24,7 @@ const Cart = () => {
   const fetchCart = async () => {
     try {
       const response = await axios.get(
-        "https://book-store-backend-n9gm.onrender.com/api/v1/get-user-cart",
+        "http://localhost:1000https://book-store-backend-n9gm.onrender.com/api/v1/get-user-cart",
         { headers }
       );
       setCart(response.data.data);
@@ -40,7 +40,7 @@ const Cart = () => {
   const placeOrder = async () => {
     try {
       const response = await axios.post(
-        "https://book-store-backend-n9gm.onrender.com/api/v1/place-order",
+        "http://localhost:1000https://book-store-backend-n9gm.onrender.com/api/v1/place-order",
         { order: cart }, // Fix here: Use cart instead of Cart
         { headers }
       );

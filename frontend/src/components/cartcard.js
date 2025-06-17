@@ -11,7 +11,7 @@ const Cartcard = (props) => {
   const handleRemove = async () => {
     try {
       const response = await axios.put(
-        `https://book-store-backend-n9gm.onrender.com/api/v1/remove-from-cart/${props.id}`,
+        `http://localhost:1000https://book-store-backend-n9gm.onrender.com/api/v1/remove-from-cart/${props.id}`,
         {},
         { headers }
       );
@@ -141,7 +141,7 @@ export default Cartcard;
 // //   const handleRemove = async () => {
 // //     try {
 // //       const response = await axios.put(
-// //         `https://book-store-backend-n9gm.onrender.com/api/v1/remove-from-cart/${props.id}`,
+// //         `http://localhost:1000https://book-store-backend-n9gm.onrender.com/api/v1/remove-from-cart/${props.id}`,
 // //         { quantity }, // Send quantity to server if needed
 // //         { headers }
 // //       );
@@ -317,7 +317,7 @@ export default Cartcard;
 //   const handleRemove = async () => {
 //     try {
 //       const response = await axios.put(
-//         `https://book-store-backend-n9gm.onrender.com/api/v1/remove-from-cart/${props.id}`,
+//         `http://localhost:1000https://book-store-backend-n9gm.onrender.com/api/v1/remove-from-cart/${props.id}`,
 //         { quantity },
 //         { headers }
 //       );
@@ -490,7 +490,7 @@ export default Cartcard;
 //   const handleRemove = async () => {
 //     try {
 //       const response = await axios.put(
-//         `https://book-store-backend-n9gm.onrender.com/api/v1/remove-from-cart/${props.id}`,
+//         `http://localhost:1000https://book-store-backend-n9gm.onrender.com/api/v1/remove-from-cart/${props.id}`,
 //         { quantity }, // Send quantity to server if needed
 //         { headers }
 //       );

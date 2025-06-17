@@ -27,7 +27,7 @@ const Bookdescription = (props) => {
   useEffect(() => {
     const fetch = async () => {
       const response = await axios.get(
-        `https://book-store-backend-n9gm.onrender.com/api/v1/get-book-by-id/${id}`
+        `http://localhost:1000https://book-store-backend-n9gm.onrender.com/api/v1/get-book-by-id/${id}`
       );
       console.log(response.data.data);
       setData(response.data.data);
@@ -47,7 +47,7 @@ const Bookdescription = (props) => {
   const buy = async () => {
     if (isLoggedIn) {
       // const response = await axios.post(
-      //   "https://book-store-backend-n9gm.onrender.com/api/v1/place-order",
+      //   "http://localhost:1000https://book-store-backend-n9gm.onrender.com/api/v1/place-order",
       //   { order: Data },
       //   { headers }
       // );
@@ -61,7 +61,7 @@ const Bookdescription = (props) => {
 
   const favclick = async () => {
     const response = await axios.put(
-      "https://book-store-backend-n9gm.onrender.com/api/v1/add-book-to-favourite",
+      "http://localhost:1000https://book-store-backend-n9gm.onrender.com/api/v1/add-book-to-favourite",
       {},
       { headers }
     );
@@ -70,7 +70,7 @@ const Bookdescription = (props) => {
 
   const handleCart = async () => {
     const response = await axios.put(
-      "https://book-store-backend-n9gm.onrender.com/api/v1/add-to-cart",
+      "http://localhost:1000https://book-store-backend-n9gm.onrender.com/api/v1/add-to-cart",
       {},
       { headers }
     );
@@ -80,7 +80,7 @@ const Bookdescription = (props) => {
 
   const deleteBook = async () => {
     const response = await axios.delete(
-      "https://book-store-backend-n9gm.onrender.com/api/v1/delete-book",
+      "http://localhost:1000https://book-store-backend-n9gm.onrender.com/api/v1/delete-book",
       { headers }
     );
     alert(response.data.message);
@@ -89,7 +89,7 @@ const Bookdescription = (props) => {
   const updateBook = async () => {
     console.log("chll gya1");
     const response = await axios.put(
-      "https://book-store-backend-n9gm.onrender.com/api/v1/update-book",
+      "http://localhost:1000https://book-store-backend-n9gm.onrender.com/api/v1/update-book",
       { headers }
     );
     console.log("chll gya2");
@@ -264,7 +264,7 @@ export default Bookdescription;
 //     const fetchBook = async () => {
 //       try {
 //         const response = await axios.get(
-//           `https://book-store-backend-n9gm.onrender.com/api/v1/get-book-by-id/${id}`
+//           `http://localhost:1000https://book-store-backend-n9gm.onrender.com/api/v1/get-book-by-id/${id}`
 //         );
 //         setData(response.data.data);
 //       } catch (error) {
@@ -295,7 +295,7 @@ export default Bookdescription;
 //   const handleFavouriteClick = async () => {
 //     try {
 //       const response = await axios.put(
-//         "https://book-store-backend-n9gm.onrender.com/api/v1/add-book-to-favourite",
+//         "http://localhost:1000https://book-store-backend-n9gm.onrender.com/api/v1/add-book-to-favourite",
 //         {},
 //         { headers }
 //       );
@@ -309,7 +309,7 @@ export default Bookdescription;
 //   const handleCart = async () => {
 //     try {
 //       const response = await axios.put(
-//         "https://book-store-backend-n9gm.onrender.com/api/v1/add-to-cart",
+//         "http://localhost:1000https://book-store-backend-n9gm.onrender.com/api/v1/add-to-cart",
 //         {},
 //         { headers }
 //       );

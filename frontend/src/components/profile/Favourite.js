@@ -16,7 +16,7 @@ const Favourites = () => {
     const fetchFavourites = async () => {
       try {
         const response = await axios.get(
-          "https://book-store-backend-n9gm.onrender.com/api/v1/get-favourite-books",
+          "http://localhost:1000https://book-store-backend-n9gm.onrender.com/api/v1/get-favourite-books",
           { headers }
         );
         setFavourites(response.data.data);

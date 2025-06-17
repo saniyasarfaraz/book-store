@@ -43,7 +43,7 @@ const UpdateBook = () => {
         alert("All fields are required");
       } else {
         const response = await axios.put(
-          "https://book-store-backend-n9gm.onrender.com/api/v1/update-book",
+          "http://localhost:1000https://book-store-backend-n9gm.onrender.com/api/v1/update-book",
           Data,
           { headers }
         );
@@ -68,7 +68,7 @@ const UpdateBook = () => {
   useEffect(() => {
     const fetch = async () => {
       const response = await axios.get(
-        `https://book-store-backend-n9gm.onrender.com/api/v1/get-book-by-id/${id}`
+        `http://localhost:1000https://book-store-backend-n9gm.onrender.com/api/v1/get-book-by-id/${id}`
       );
       setData(response.data.data);
     };
