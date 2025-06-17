@@ -818,49 +818,45 @@ button:hover {
 
 
 }
-/* 👇 Applies only on phones or very narrow screens */
 @media (max-width: 600px) {
   .book-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap: 1rem;
-    padding: 1rem;
-    justify-items: center;
-    width: 100vw;
-    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+    padding: 0.5rem;
   }
 
   .multiple-cards {
-    width: 45vw;        /* 2 per row */
-    height: auto;
-    margin: 0.5rem 0;
+    width: 48vw;             /* 2 cards per row */
+    height: 48vh;            /* 2 rows per screen */
+    margin-bottom: 1rem;
     background: #f5e1bc9e;
-    border-radius: 8px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .card-img-top {
+    height: 60%;             /* image takes top 60% */
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .card-body {
+    padding: 0.5rem;
+    height: 40%;             /* body takes remaining 40% */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
-  .card-img-top {
+  .btn {
     width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-
-  .button-box {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .home-card {
-    padding-top: 8vw; /* Reduce top space */
-  }
-
-  .view-button,
-  .btn-primary {
-    width: 80%;
-    margin: 0 auto;
+    font-size: 0.9rem;
+    padding: 0.4rem;
   }
 
   .book-container > * {
