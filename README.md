@@ -120,17 +120,6 @@ Password: User@123
 
 ---
 
-## 📸 Screenshots
-
-You can include screenshots here:
-
-- Home Page
-- Book Detail Page
-- Cart & Checkout Page
-- Admin Dashboard
-
----
-
 ## 📦 Deployment
 
 Deployed this app:
