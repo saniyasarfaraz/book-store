@@ -125,6 +125,9 @@ You can include screenshots here:
 Deployed this app:
 - **Frontend:** Vercel 
 - **Backend:** Render
+---
+
+## 👀 View Web Application
 
 **Access the App:** [https://book-store-three-sooty.vercel.app/](https://book-store-three-sooty.vercel.app/)
 ---
