@@ -50,7 +50,7 @@ const AllOrders = () => {
     const fetchAllOrders = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:1000https://book-store-backend-n9gm.onrender.com/api/v1/get-all-orders",
+          "https://book-store-backend-n9gm.onrender.com/api/v1/get-all-orders",
           { headers }
         );
         setAllOrders(response.data.data);
