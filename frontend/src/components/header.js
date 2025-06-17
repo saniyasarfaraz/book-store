@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from "./logo3.jpg";
+import logo from "./logo.png";
 import { Link } from "react-router-dom";
 
 import { useSelector } from "react-redux";
@@ -208,7 +208,7 @@ const Header = () => {
                   className="nav-link active"
                   aria-current="page"
                   to="/"
-                  style={{ color: "#fff5e9" }}
+                  style={{ color: "#f5d0a5" }}
                 >
                   Home
                 </Link>
@@ -218,7 +218,7 @@ const Header = () => {
                   to="/about"
                   className="nav-link active"
                   aria-current="page"
-                  style={{ color: "#fff5e9" }}
+                  style={{ color: "#f5d0a5" }}
                 >
                   About
                 </Link>
@@ -235,7 +235,7 @@ const Header = () => {
                   to="/books"
                   className="nav-link active"
                   aria-current="page"
-                  style={{ color: "#fff5e9", background: "none" }}
+                  style={{ color: "#f5d0a5", background: "none" }}
                 >
                   Books
                 </Link>

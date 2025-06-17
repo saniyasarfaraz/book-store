@@ -4,7 +4,7 @@ body {
 }
 
 .navbar {
-  background-color: #4f2c16;
+  background-color: #3E2B12;
   position: fixed;
   z-index: 30;
   width: 100%;
@@ -35,7 +35,7 @@ header {
 .nav-item {
   margin: 20px;
   font-size: 1.2rem;
-  color: rgb(255, 246, 234);
+  color: #c4a27c;
 }
 
 .navbar-nav {
@@ -43,7 +43,7 @@ header {
 }
 
 nav ul li a {
-  color: #fff5e9;
+  color: #c4a27c;
 }
 
 .nav-links:hover {

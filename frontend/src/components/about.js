@@ -17,7 +17,7 @@ const About = () => {
           className="addbook-text"
           style={{ fontSize: "1.2rem", textAlign: "justify" }}
         >
-          Welcome to Chapter Chaser, your ultimate destination for book lovers.
+          Welcome to Book World, your ultimate destination for book lovers.
           Whether you're searching for the latest bestsellers, timeless
           classics, or hidden literary gems, we're dedicated to bringing you the
           best reading experience. Our online bookstore offers a wide variety of
@@ -28,7 +28,7 @@ const About = () => {
           className="addbook-text"
           style={{ textAlign: "justify", fontSize: "1.2rem" }}
         >
-          At Chapter Chaser, we believe that every book tells a story, and every
+          At Book World, we believe that every book tells a story, and every
           reader deserves an experience tailored to their tastes. We aim to make
           book shopping as enjoyable and seamless as reading itself.
         </p>
@@ -42,7 +42,7 @@ const About = () => {
           className="addbook-text"
           style={{ textAlign: "justify", fontSize: "1.2rem" }}
         >
-          The idea for Chapter Chaser was conceived in August 2024 during an
+          The idea for Book World was conceived in August 2024 during an
           internship focused on web development. As passionate readers and tech
           enthusiasts, our team recognized the need for a streamlined,
           user-friendly platform where readers could discover, purchase, and
@@ -109,7 +109,7 @@ const About = () => {
           Have questions, suggestions, or feedback? We’d love to hear from you.
           Reach out to us at:
           <ul>
-            <li>Email: contact@chapterchaser.com</li>
+            <li>Email: contact@BookWorld.com</li>
             <li style={{ fontFamily: "timesNewRoman" }}>
               Phone: +91-123456789
             </li>
