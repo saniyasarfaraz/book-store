@@ -9,7 +9,6 @@
 ### 👤 User Module
 - Register and Login using JWT authentication
 - Browse available books
-- Search and filter books
 - View detailed book descriptions
 - Add books to Cart or Favourites
 - Place orders (Cash on Delivery)
@@ -32,7 +31,7 @@
 | **Node.js**    | Backend runtime                               |
 | **JWT**        | For secure authentication                     |
 | **Axios**      | HTTP client for frontend-backend communication|
-| **CSS** / **Bootstrap** | Styling and responsive design       |
+| **CSS**        | Styling and responsive design       |
 
 ---
 
@@ -40,14 +39,9 @@
 
 ```
 Chapter-Chaser/
-├── client/                # React frontend
-│   ├── components/        # Reusable components like BookCard, Cart, etc.
-│   └── pages/             # Route pages like Home, Login, OrderHistory, etc.
-├── server/                # Node.js backend
-│   ├── models/            # Mongoose models (User, Book, Order)
-│   ├── routes/            # API routes
-│   ├── controllers/       # Business logic
-│   └── middleware/        # Auth middleware
+├── Frontend/              # React frontend
+├── Backend/               # Node.js backend
+├── README.md
 ```
 
 ---
@@ -60,13 +54,13 @@ Chapter-Chaser/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/YOUR-USERNAME/Chapter-Chaser.git
-cd Chapter-Chaser
+git clone https://github.com/saniyasarfaraz/book-store.git
+cd book-store
 ```
 
 ### 2. Setup Server
 ```bash
-cd server
+cd backend
 npm install
 ```
 
@@ -79,7 +73,7 @@ JWT_SECRET=your_secret_key
 
 ### 3. Setup Client
 ```bash
-cd ../client
+cd ../frontend
 npm install
 ```
 
@@ -87,13 +81,13 @@ npm install
 
 #### Start Backend:
 ```bash
-cd ../server
-npm start
+cd ../backend
+nodemon app.js or node app.js
 ```
 
 #### Start Frontend:
 ```bash
-cd ../client
+cd ../frontend
 npm start
 ```
 
@@ -104,8 +98,14 @@ Access the app at: [http://localhost:3000](http://localhost:3000)
 ## 🧪 Sample Admin Credentials (for Testing)
 
 ```
-Email: admin@example.com
+Username: admin
 Password: admin123
+```
+## 🧪 Sample User Credentials (for Testing)
+
+```
+Username: User
+Password: User@123
 ```
 
 ---
@@ -122,10 +122,11 @@ You can include screenshots here:
 
 ## 📦 Deployment
 
-To deploy this app:
-- **Frontend:** Vercel or Netlify
-- **Backend:** Render, Railway, or Cyclic
+Deployed this app:
+- **Frontend:** Vercel 
+- **Backend:** Render
 
+**Access the App:** [https://book-store-three-sooty.vercel.app/](https://book-store-three-sooty.vercel.app/)
 ---
 
 ## 🧑‍💻 Author
